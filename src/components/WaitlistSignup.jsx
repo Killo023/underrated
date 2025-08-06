@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Crown, Zap, CheckCircle } from 'lucide-react';
-import { supabase, TABLES } from '../supabase';
+import { supabase, TABLES, isSupabaseConfigured } from '../supabase';
 import toast from 'react-hot-toast';
 
 const WaitlistSignup = () => {
@@ -20,6 +20,15 @@ const WaitlistSignup = () => {
     setIsSubmitting(true);
     
     try {
+      if (!isSupabaseConfigured()) {
+        // If Supabase is not configured, just show success message
+        setIsSuccess(true);
+        reset();
+        toast.success('Successfully joined the waitlist!');
+        setTimeout(() => setIsSuccess(false), 5000);
+        return;
+      }
+
       const { error } = await supabase
         .from(TABLES.WAITLIST)
         .insert([

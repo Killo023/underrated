@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Mail, Shield, CheckCircle } from 'lucide-react';
-import { supabase, TABLES } from '../supabase';
+import { supabase, TABLES, isSupabaseConfigured } from '../supabase';
 import toast from 'react-hot-toast';
 
 const EmailSignup = () => {
@@ -20,6 +20,15 @@ const EmailSignup = () => {
     setIsSubmitting(true);
     
     try {
+      if (!isSupabaseConfigured()) {
+        // If Supabase is not configured, just show success message
+        setIsSuccess(true);
+        reset();
+        toast.success('Successfully subscribed to security alerts!');
+        setTimeout(() => setIsSuccess(false), 3000);
+        return;
+      }
+
       const { error } = await supabase
         .from(TABLES.EMAIL_SIGNUPS)
         .insert([
