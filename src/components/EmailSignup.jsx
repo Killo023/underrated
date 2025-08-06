@@ -16,15 +16,42 @@ const EmailSignup = () => {
     reset
   } = useForm();
 
+  const sendNotificationEmail = async (subscriberEmail) => {
+    try {
+      // Send notification to admin via API
+      const response = await fetch('/api/notify-subscription', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          subscriberEmail,
+          type: 'free_alerts',
+          timestamp: new Date().toISOString()
+        }),
+      });
+
+      if (!response.ok) {
+        console.warn('Failed to send notification email');
+      }
+    } catch (error) {
+      console.warn('Error sending notification email:', error);
+    }
+  };
+
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     
     try {
       if (!isSupabaseConfigured()) {
-        // If Supabase is not configured, just show success message
+        // If Supabase is not configured, just show success message and send notification
         setIsSuccess(true);
         reset();
         toast.success('Successfully subscribed to security alerts!');
+        
+        // Send notification email
+        await sendNotificationEmail(data.email);
+        
         setTimeout(() => setIsSuccess(false), 3000);
         return;
       }
@@ -39,6 +66,9 @@ const EmailSignup = () => {
         ]);
 
       if (error) throw error;
+
+      // Send notification email
+      await sendNotificationEmail(data.email);
 
       setIsSuccess(true);
       reset();
