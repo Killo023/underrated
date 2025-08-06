@@ -33,9 +33,9 @@ const Header = () => {
             <a href="#pricing" className="text-gray-300 hover:text-cyber-blue transition-colors">
               Pricing
             </a>
-            <button className="cyber-button text-sm">
+            <a href="#hero" className="cyber-button text-sm">
               Get Started
-            </button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -77,9 +77,9 @@ const Header = () => {
               >
                 Pricing
               </a>
-              <button className="cyber-button w-full">
+              <a href="#hero" className="cyber-button w-full block text-center">
                 Get Started
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

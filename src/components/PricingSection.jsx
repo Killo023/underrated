@@ -59,9 +59,9 @@ const PricingSection = () => {
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-2">$0</div>
               <div className="text-gray-400 mb-6">Forever free</div>
-              <button className="cyber-button w-full">
+              <a href="#hero" className="cyber-button w-full block text-center">
                 Get Free Alerts
-              </button>
+              </a>
             </div>
           </motion.div>
 

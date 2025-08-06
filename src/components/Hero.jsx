@@ -5,7 +5,7 @@ import EmailSignup from './EmailSignup';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-cyber-blue/10 rounded-full blur-3xl animate-pulse-slow"></div>
@@ -89,10 +89,10 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4"
               >
-                <button className="cyber-button text-lg px-8 py-4 flex items-center">
+                <a href="#hero" className="cyber-button text-lg px-8 py-4 flex items-center">
                   Get Free Alerts
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
+                </a>
                 <a href="#pricing" className="text-cyber-blue hover:text-cyber-green transition-colors font-semibold">
                   View Premium Dashboard →
                 </a>

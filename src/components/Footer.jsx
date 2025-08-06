@@ -49,22 +49,22 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/free-alerts" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="#hero" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   Free Alerts
                 </a>
               </li>
               <li>
-                <a href="/premium-dashboard" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="#pricing" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   Premium Dashboard
                 </a>
               </li>
               <li>
-                <a href="/api-access" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="mailto:api@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   API Access
                 </a>
               </li>
               <li>
-                <a href="/integrations" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="mailto:integrations@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   Integrations
                 </a>
               </li>
@@ -80,22 +80,22 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="mailto:about@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/blog" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="mailto:blog@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="/careers" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="mailto:careers@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   Careers
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-400 hover:text-cyber-blue transition-colors">
+                <a href="mailto:contact@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
                   Contact
                 </a>
               </li>
@@ -113,13 +113,13 @@ const Footer = () => {
             © 2024 Underrated Security. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm">
-            <a href="/privacy" className="text-gray-400 hover:text-cyber-blue transition-colors">
+            <a href="mailto:privacy@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
               Privacy Policy
             </a>
-            <a href="/terms" className="text-gray-400 hover:text-cyber-blue transition-colors">
+            <a href="mailto:terms@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
               Terms of Service
             </a>
-            <a href="/security" className="text-gray-400 hover:text-cyber-blue transition-colors">
+            <a href="mailto:security@underratedsecurity.com" className="text-gray-400 hover:text-cyber-blue transition-colors">
               Security
             </a>
           </div>
