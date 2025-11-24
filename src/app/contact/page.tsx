@@ -239,7 +239,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">hello@underratedsoftwaresolutions.com</p>
+                    <p className="text-gray-600">cylehendricks@underratedsecurity.com</p>
                     <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
@@ -250,8 +250,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM EST</p>
+                    <p className="text-gray-600">079 477 2031</p>
+                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM SAST</p>
                   </div>
                 </div>
 
@@ -261,7 +261,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Office</h3>
-                    <p className="text-gray-600">123 Business Street<br />City, State 12345</p>
+                    <p className="text-gray-600">5 Hexriver Street<br />Winchester Hills</p>
                     <p className="text-sm text-gray-500">Schedule a visit</p>
                   </div>
                 </div>
