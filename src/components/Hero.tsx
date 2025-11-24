@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import AnimatedWrapper from './AnimatedWrapper'
 import Logo from './Logo'
@@ -22,7 +22,7 @@ const Hero = () => {
                 <div className="flex items-center justify-center lg:justify-start mb-4">
                   <Logo size="sm" showText={false} />
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   <AnimatedText3D 
                     text="Build Your Digital Presence,"
                     delay={0.5}
@@ -34,7 +34,7 @@ const Hero = () => {
                     className="text-gradient animate-gradient"
                   />
                 </h1>
-                <p className="text-xl text-gray-200 leading-relaxed">
+                <p className="text-xl text-gray-700 leading-relaxed">
                   Professional web development and custom software solutions. We create modern websites, 
                   web applications, and software tailored to your business needs. From responsive websites 
                   to complex web applications, we bring your vision to life.
@@ -52,29 +52,21 @@ const Hero = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button3D>
-                <Button3D 
-                  variant="accent" 
-                  size="lg"
-                  className="inline-flex items-center justify-center"
-                >
-                  <Play className="mr-2 h-5 w-5" />
-                  Watch Demo
-                </Button3D>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white animate-pulse-slow">500+</div>
-                  <div className="text-sm text-gray-200">Projects Completed</div>
+                  <div className="text-3xl font-bold text-gray-900 animate-pulse-slow">500+</div>
+                  <div className="text-sm text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white animate-pulse-slow" style={{animationDelay: '0.5s'}}>98%</div>
-                  <div className="text-sm text-gray-200">Client Satisfaction</div>
+                  <div className="text-3xl font-bold text-gray-900 animate-pulse-slow" style={{animationDelay: '0.5s'}}>98%</div>
+                  <div className="text-sm text-gray-600">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white animate-pulse-slow" style={{animationDelay: '1s'}}>24/7</div>
-                  <div className="text-sm text-gray-200">Support Available</div>
+                  <div className="text-3xl font-bold text-gray-900 animate-pulse-slow" style={{animationDelay: '1s'}}>24/7</div>
+                  <div className="text-sm text-gray-600">Support Available</div>
                 </div>
               </div>
             </div>
