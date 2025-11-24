@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, User, ArrowRight } from 'lucide-react'
-import BasicImage from '@/components/BasicImage'
 import AnimatedWrapper from '@/components/AnimatedWrapper'
+import { BLOG_PAGE_HERO, BLOG_POST_IMAGES } from '@/lib/image-urls'
 
 export const metadata: Metadata = {
   title: 'Blog - Underrated Software Solutions',
@@ -17,8 +17,7 @@ const BlogPage = () => {
       author: 'Sarah Johnson',
       date: '2024-01-15',
       category: 'Web Development',
-      readTime: '5 min read',
-      imageQuery: 'web development trends technology future 2024'
+      readTime: '5 min read'
     },
     {
       title: 'How to Choose the Right Web Development Framework',
@@ -26,8 +25,7 @@ const BlogPage = () => {
       author: 'Michael Chen',
       date: '2024-01-10',
       category: 'Guide',
-      readTime: '7 min read',
-      imageQuery: 'web development framework selection software guide'
+      readTime: '7 min read'
     },
     {
       title: '5 Signs Your Business Needs a New Website',
@@ -35,8 +33,7 @@ const BlogPage = () => {
       author: 'Emily Rodriguez',
       date: '2024-01-05',
       category: 'Web Development',
-      readTime: '4 min read',
-      imageQuery: 'website redesign business web development'
+      readTime: '4 min read'
     },
     {
       title: 'Mobile Workforce Management: Best Practices and Tools',
@@ -44,8 +41,7 @@ const BlogPage = () => {
       author: 'David Kim',
       date: '2023-12-28',
       category: 'Mobile',
-      readTime: '6 min read',
-      imageQuery: 'mobile workforce management smartphone app field workers'
+      readTime: '6 min read'
     },
     {
       title: 'ROI of Web Development: Measuring Success',
@@ -53,8 +49,7 @@ const BlogPage = () => {
       author: 'Lisa Wang',
       date: '2023-12-20',
       category: 'Analytics',
-      readTime: '8 min read',
-      imageQuery: 'ROI analytics business metrics dashboard charts'
+      readTime: '8 min read'
     },
     {
       title: 'Data Security in Web Applications',
@@ -62,8 +57,7 @@ const BlogPage = () => {
       author: 'James Wilson',
       date: '2023-12-15',
       category: 'Security',
-      readTime: '6 min read',
-      imageQuery: 'data security cybersecurity web application compliance'
+      readTime: '6 min read'
     }
   ]
 
@@ -96,13 +90,10 @@ const BlogPage = () => {
             <AnimatedWrapper animation="slideLeft">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <BasicImage
-                    query="business blog writing content marketing web development insights"
-                    width={600}
-                    height={400}
+                  <img
+                    src={BLOG_PAGE_HERO}
                     alt="Business blog and content marketing for web development insights"
-                    className="w-full h-80"
-                    category="business"
+                    className="w-full h-80 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -176,13 +167,10 @@ const BlogPage = () => {
               >
                 {/* Post Image */}
                 <div className="h-48 relative overflow-hidden">
-                  <BasicImage
-                    query={post.imageQuery}
-                    width={400}
-                    height={192}
+                  <img
+                    src={BLOG_POST_IMAGES[index % BLOG_POST_IMAGES.length]}
                     alt={post.title}
                     className="w-full h-full object-cover"
-                    category="business"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>

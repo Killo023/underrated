@@ -2,45 +2,41 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { getDashboardImage } from '@/lib/image-urls'
+import { DASHBOARD_SHOWCASE_IMAGES } from '@/lib/image-urls'
 
 interface DashboardShowcaseProps {
   dashboards?: Array<{
-    query: string
     title: string
     description: string
+    image: string
   }>
 }
 
 const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({ 
   dashboards = [
     {
-      query: 'app dashboard analytics data visualization charts',
       title: 'Analytics Dashboard',
-      description: 'Real-time data visualization and insights'
+      description: 'Real-time data visualization and insights',
+      image: DASHBOARD_SHOWCASE_IMAGES[0]
     },
     {
-      query: 'web app dashboard interface software',
       title: 'Web Application Dashboard',
-      description: 'Modern web interface with comprehensive features'
+      description: 'Modern web interface with comprehensive features',
+      image: DASHBOARD_SHOWCASE_IMAGES[1]
     },
     {
-      query: 'mobile app dashboard smartphone interface',
       title: 'Mobile Dashboard',
-      description: 'Responsive mobile app interface'
+      description: 'Responsive mobile app interface',
+      image: DASHBOARD_SHOWCASE_IMAGES[2]
     },
     {
-      query: 'software dashboard admin panel interface',
       title: 'Admin Dashboard',
-      description: 'Comprehensive admin control panel'
+      description: 'Comprehensive admin control panel',
+      image: DASHBOARD_SHOWCASE_IMAGES[3]
     }
   ]
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-
-  const getImageUrl = (query: string, width: number = 1200, height: number = 800) => {
-    return getDashboardImage(query, width, height)
-  }
 
   return (
     <div className="space-y-6">
@@ -48,7 +44,7 @@ const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
       <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-black">
         <div className="relative h-96 bg-gradient-to-br from-gray-900 to-black">
           <Image
-            src={getImageUrl(dashboards[currentIndex].query)}
+            src={dashboards[currentIndex].image}
             alt={dashboards[currentIndex].title}
             fill
             className="object-cover opacity-90"
@@ -77,7 +73,7 @@ const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
             }`}
           >
             <Image
-              src={getImageUrl(dashboard.query, 400, 300)}
+              src={dashboard.image}
               alt={dashboard.title}
               fill
               className="object-cover"

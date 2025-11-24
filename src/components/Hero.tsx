@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { ArrowRight, Play } from 'lucide-react'
 import { motion } from 'framer-motion'
 import AnimatedWrapper from './AnimatedWrapper'
-import BasicImage from './BasicImage'
 import Logo from './Logo'
 import AnimatedText3D from './AnimatedText3D'
 import Button3D from './Button3D'
 import Card3D from './Card3D'
+import { HERO_IMAGE } from '@/lib/image-urls'
 
 const Hero = () => {
   return (
@@ -84,13 +84,10 @@ const Hero = () => {
             <AnimatedWrapper animation="slideLeft" delay={0.4}>
               <Card3D intensity={15} className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl hover-lift">
-                  <BasicImage
-                    query="app dashboard software interface analytics data visualization"
-                    width={600}
-                    height={400}
+                  <img
+                    src={HERO_IMAGE}
                     alt="Modern app dashboard with analytics and data visualization"
-                    className="w-full h-80"
-                    category="technology"
+                    className="w-full h-80 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">

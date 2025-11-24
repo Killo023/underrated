@@ -1,32 +1,13 @@
 import { Metadata } from 'next'
 import { Database, Smartphone, Cloud, BarChart3, ArrowRight } from 'lucide-react'
-import BasicImage from '@/components/BasicImage'
 import AnimatedWrapper from '@/components/AnimatedWrapper'
+import { SERVICES_PAGE_HERO, SERVICES_PAGE_IMAGES, SERVICES_PAGE_CTA } from '@/lib/image-urls'
 
 export const metadata: Metadata = {
   title: 'Services - Underrated Software Solutions',
   description: 'Professional web development and software services including custom websites, mobile apps, web applications, and custom software development.',
 }
 
-// Helper function to get appropriate image query for each service
-const getServiceImageQuery = (serviceTitle: string): string => {
-  const titleLower = serviceTitle.toLowerCase()
-  if (titleLower.includes('web') && titleLower.includes('development')) {
-    return 'web development website design responsive modern'
-  } else if (titleLower.includes('mobile')) {
-    return 'mobile app development smartphone interface design'
-  } else if (titleLower.includes('software') || titleLower.includes('custom')) {
-    return 'software development coding programming custom solutions'
-  } else if (titleLower.includes('application') || titleLower.includes('web app')) {
-    return 'web application development dashboard software interface'
-  }
-  return 'web development software coding programming'
-}
-
-// Helper function to get appropriate category for each service
-const getServiceCategory = (serviceTitle: string): 'business' | 'technology' | 'automation' | 'team' | 'office' => {
-  return 'technology'
-}
 
 const ServicesPage = () => {
   const services = [
@@ -131,13 +112,10 @@ const ServicesPage = () => {
             <AnimatedWrapper animation="slideLeft">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <BasicImage
-                    query="app dashboard web interface analytics data visualization charts"
-                    width={600}
-                    height={400}
+                  <img
+                    src={SERVICES_PAGE_HERO}
                     alt="Modern app dashboard with analytics and data visualization"
-                    className="w-full h-80"
-                    category="technology"
+                    className="w-full h-80 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
@@ -200,13 +178,10 @@ const ServicesPage = () => {
                 
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative rounded-2xl overflow-hidden shadow-lg h-80">
-                    <BasicImage
-                      query={getServiceImageQuery(service.title)}
-                      width={600}
-                      height={320}
+                    <img
+                      src={SERVICES_PAGE_IMAGES[index]}
                       alt={`${service.title} - ${service.description}`}
                       className="w-full h-full object-cover"
-                      category={getServiceCategory(service.title)}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     <div className="absolute top-4 left-4">
@@ -247,13 +222,10 @@ const ServicesPage = () => {
             <AnimatedWrapper animation="slideLeft">
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <BasicImage
-                    query="website landing page design business consultation"
-                    width={600}
-                    height={400}
+                  <img
+                    src={SERVICES_PAGE_CTA}
                     alt="Business consultation and web development planning"
-                    className="w-full h-80"
-                    category="business"
+                    className="w-full h-80 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>

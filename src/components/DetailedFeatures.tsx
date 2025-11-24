@@ -2,7 +2,7 @@
 
 import { Code, Smartphone, Globe, Database, Zap, Shield, BarChart3, Users, Settings, Rocket } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
-import BasicImage from './BasicImage'
+import { FEATURES_IMAGES, getImageByIndex } from '@/lib/image-urls'
 
 const DetailedFeatures = () => {
   const features = [
@@ -16,8 +16,7 @@ const DetailedFeatures = () => {
         'TypeScript for type safety',
         'Tailwind CSS for responsive design',
         'RESTful and GraphQL APIs'
-      ],
-      imageQuery: 'web development coding programming modern tech stack'
+      ]
     },
     {
       icon: Smartphone,
@@ -29,8 +28,7 @@ const DetailedFeatures = () => {
         'Touch-optimized interfaces',
         'Progressive Web App (PWA) support',
         'App store deployment'
-      ],
-      imageQuery: 'responsive design mobile tablet desktop interface'
+      ]
     },
     {
       icon: Globe,
@@ -42,8 +40,7 @@ const DetailedFeatures = () => {
         'Mobile-friendly indexing',
         'XML sitemaps and robots.txt',
         'Content optimization strategies'
-      ],
-      imageQuery: 'SEO optimization search engine ranking analytics'
+      ]
     },
     {
       icon: Database,
@@ -55,8 +52,7 @@ const DetailedFeatures = () => {
         'Database optimization and indexing',
         'Data backup and recovery',
         'Real-time data synchronization'
-      ],
-      imageQuery: 'database management data storage server infrastructure'
+      ]
     },
     {
       icon: Zap,
@@ -68,8 +64,7 @@ const DetailedFeatures = () => {
         'Caching strategies',
         'Minification and compression',
         'Performance monitoring tools'
-      ],
-      imageQuery: 'performance optimization speed loading analytics dashboard'
+      ]
     },
     {
       icon: Shield,
@@ -81,8 +76,7 @@ const DetailedFeatures = () => {
         'GDPR and privacy compliance',
         'Regular security audits',
         'Data encryption at rest and in transit'
-      ],
-      imageQuery: 'cybersecurity data protection security shield'
+      ]
     },
     {
       icon: BarChart3,
@@ -94,8 +88,7 @@ const DetailedFeatures = () => {
         'User behavior analysis',
         'Conversion tracking',
         'Real-time dashboard reporting'
-      ],
-      imageQuery: 'analytics dashboard data visualization charts metrics'
+      ]
     },
     {
       icon: Users,
@@ -107,8 +100,7 @@ const DetailedFeatures = () => {
         'Usability testing',
         'Accessibility (WCAG compliance)',
         'A/B testing and optimization'
-      ],
-      imageQuery: 'user experience design interface usability testing'
+      ]
     },
     {
       icon: Settings,
@@ -120,8 +112,7 @@ const DetailedFeatures = () => {
         'Bug fixes and troubleshooting',
         'Feature enhancements',
         'Performance optimization'
-      ],
-      imageQuery: 'technical support maintenance server monitoring'
+      ]
     },
     {
       icon: Rocket,
@@ -133,8 +124,7 @@ const DetailedFeatures = () => {
         'Microservices architecture',
         'API rate limiting and throttling',
         'Database sharding and replication'
-      ],
-      imageQuery: 'cloud infrastructure scalability server architecture'
+      ]
     }
   ]
 
@@ -168,13 +158,10 @@ const DetailedFeatures = () => {
                 </div>
                 
                 <div className="mb-4">
-                  <BasicImage
-                    query={feature.imageQuery}
-                    width={600}
-                    height={200}
+                  <img
+                    src={getImageByIndex(index < 5 ? 'webdev' : 'technology', index, 600, 200)}
                     alt={feature.title}
-                    className="w-full h-32 rounded-lg"
-                    category="technology"
+                    className="w-full h-32 rounded-lg object-cover"
                   />
                 </div>
 

@@ -1,7 +1,7 @@
 import { Database, Smartphone, Cloud, BarChart3 } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
-import BasicImage from './BasicImage'
 import Card3D from './Card3D'
+import { SERVICES_IMAGES } from '@/lib/image-urls'
 
 const Services = () => {
   const services = [
@@ -10,28 +10,28 @@ const Services = () => {
       title: 'Web Development',
       description: 'Create stunning, responsive websites that work seamlessly across all devices. From simple landing pages to complex web applications.',
       features: ['Responsive design', 'Modern frameworks', 'SEO optimized'],
-      query: 'app dashboard web interface analytics charts'
+      image: SERVICES_IMAGES[0]
     },
     {
       icon: Smartphone,
       title: 'Mobile App Development',
       description: 'Build native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.',
       features: ['Native & cross-platform', 'User-friendly design', 'App store optimization'],
-      query: 'mobile app dashboard interface analytics smartphone'
+      image: SERVICES_IMAGES[1]
     },
     {
       icon: Database,
       title: 'Custom Software Development',
       description: 'Develop tailored software solutions that address your specific business needs with scalable architecture and modern technologies.',
       features: ['Custom solutions', 'Scalable architecture', 'Modern tech stack'],
-      query: 'software dashboard analytics data visualization interface'
+      image: SERVICES_IMAGES[2]
     },
     {
       icon: BarChart3,
       title: 'Web Application Development',
       description: 'Build powerful web applications with advanced features, real-time capabilities, and seamless user experiences.',
       features: ['Full-stack development', 'Real-time features', 'API integration'],
-      query: 'web app dashboard analytics real-time data interface'
+      image: SERVICES_IMAGES[3]
     }
   ]
 
@@ -57,13 +57,10 @@ const Services = () => {
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift transition-shadow duration-300">
                   {/* Service Image */}
                   <div className="h-48 relative overflow-hidden">
-                    <BasicImage
-                      query={service.query}
-                      width={400}
-                      height={200}
+                    <img
+                      src={service.image}
                       alt={`${service.title} - ${service.description}`}
                       className="w-full h-full object-cover"
-                      category="technology"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className="absolute top-4 right-4">
