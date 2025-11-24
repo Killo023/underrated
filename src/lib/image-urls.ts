@@ -154,3 +154,17 @@ export const BLOG_POST_IMAGES = [
   `${ALL_IMAGES.business[2]}?fit=crop&w=400&h=192&q=80&auto=format`,
   `${ALL_IMAGES.technology[4]}?fit=crop&w=400&h=192&q=80&auto=format`,
 ]
+
+// DetailedFeatures section - verified working Unsplash images
+export const DETAILED_FEATURES_IMAGES = [
+  'https://images.unsplash.com/photo-1633356122544-f134324a6cee?fit=crop&w=600&h=200&q=80&auto=format', // Modern Tech Stack - React logo
+  'https://images.unsplash.com/photo-1559028012-481c04fa702d?fit=crop&w=600&h=200&q=80&auto=format', // Responsive Design - devices
+  'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?fit=crop&w=600&h=200&q=80&auto=format', // SEO Optimization - search
+  'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?fit=crop&w=600&h=200&q=80&auto=format', // Database Integration - server
+  'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?fit=crop&w=600&h=200&q=80&auto=format', // Performance - speed
+  'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?fit=crop&w=600&h=200&q=80&auto=format', // Security - lock/code
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=600&h=200&q=80&auto=format', // Analytics - dashboard
+  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fit=crop&w=600&h=200&q=80&auto=format', // UX Design - person working
+  'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?fit=crop&w=600&h=200&q=80&auto=format', // Maintenance - tech support
+  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?fit=crop&w=600&h=200&q=80&auto=format', // Scalability - cloud/globe
+]

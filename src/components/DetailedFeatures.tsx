@@ -2,7 +2,7 @@
 
 import { Code, Smartphone, Globe, Database, Zap, Shield, BarChart3, Users, Settings, Rocket } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
-import { FEATURES_IMAGES, getImageByIndex } from '@/lib/image-urls'
+import { DETAILED_FEATURES_IMAGES } from '@/lib/image-urls'
 
 const DetailedFeatures = () => {
   const features = [
@@ -159,9 +159,13 @@ const DetailedFeatures = () => {
                 
                 <div className="mb-4">
                   <img
-                    src={getImageByIndex(index < 5 ? 'webdev' : 'technology', index, 600, 200)}
+                    src={DETAILED_FEATURES_IMAGES[index]}
                     alt={feature.title}
                     className="w-full h-32 rounded-lg object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.style.display = 'none'
+                    }}
                   />
                 </div>
 
