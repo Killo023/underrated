@@ -3,6 +3,7 @@ import Services from '@/components/Services'
 import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import DashboardShowcase from '@/components/DashboardShowcase'
+import DetailedFeatures from '@/components/DetailedFeatures'
 import AnimatedWrapper from '@/components/AnimatedWrapper'
 
 export default function Home() {
@@ -21,7 +22,9 @@ export default function Home() {
               </h2>
               <p className="text-xl text-gray-200 max-w-3xl mx-auto">
                 Explore our portfolio of beautifully designed app dashboards featuring 
-                real-time analytics, data visualization, and intuitive user interfaces.
+                real-time analytics, data visualization, and intuitive user interfaces. 
+                Each dashboard is crafted with attention to detail, ensuring optimal user 
+                experience and powerful functionality.
               </p>
             </div>
           </AnimatedWrapper>
@@ -29,6 +32,7 @@ export default function Home() {
         </div>
       </section>
 
+      <DetailedFeatures />
       <Testimonials />
       <CTA />
     </>

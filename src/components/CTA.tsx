@@ -5,7 +5,7 @@ import Button3D from './Button3D'
 
 const CTA = () => {
   return (
-    <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600">
+    <section className="section-padding bg-gradient-to-r from-black via-primary-600 to-secondary-600">
       <div className="container-max">
         <AnimatedWrapper animation="fadeIn">
           <div className="text-center text-white">
