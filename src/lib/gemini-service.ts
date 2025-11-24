@@ -80,8 +80,8 @@ export class GeminiImageService {
     }
   }
 
-  private enhancePrompt(prompt: string, style?: string): string {
-    const styleModifiers = {
+  private enhancePrompt(prompt: string, style?: 'photographic' | 'illustration' | 'artistic' | 'minimalist'): string {
+    const styleModifiers: Record<'photographic' | 'illustration' | 'artistic' | 'minimalist', string> = {
       photographic: 'professional photography, high quality, realistic',
       illustration: 'digital illustration, clean design, modern',
       artistic: 'artistic interpretation, creative, visually appealing',
@@ -91,7 +91,7 @@ export class GeminiImageService {
     const basePrompt = `Generate a detailed description for an image search query based on: "${prompt}". 
     The image should be suitable for a business automation website. 
     Focus on professional, modern, and technology-related themes.
-    ${style ? `Style: ${styleModifiers[style] || styleModifiers.photographic}` : ''}
+    ${style && style in styleModifiers ? `Style: ${styleModifiers[style]}` : style ? `Style: ${styleModifiers.photographic}` : ''}
     
     Return only the enhanced search query, no additional text.`
 
@@ -124,9 +124,9 @@ export class GeminiImageService {
     }
   }
 
-  private enhancePromptForUnsplash(prompt: string, style?: string): string {
+  private enhancePromptForUnsplash(prompt: string, style?: 'photographic' | 'illustration' | 'artistic' | 'minimalist'): string {
     const businessKeywords = ['business', 'professional', 'office', 'technology', 'modern']
-    const styleKeywords = {
+    const styleKeywords: Record<'photographic' | 'illustration' | 'artistic' | 'minimalist', string> = {
       photographic: 'photography professional',
       illustration: 'illustration design',
       artistic: 'art creative',
@@ -136,7 +136,7 @@ export class GeminiImageService {
     const enhanced = [
       prompt,
       ...businessKeywords,
-      style ? styleKeywords[style] : 'photography'
+      style && style in styleKeywords ? styleKeywords[style] : 'photography'
     ].join(' ')
 
     return enhanced
