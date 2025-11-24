@@ -6,37 +6,37 @@ import AnimatedWrapper from '@/components/AnimatedWrapper'
 
 export const metadata: Metadata = {
   title: 'Blog - Underrated Software Solutions',
-  description: 'Insights, tips, and best practices for business automation and process optimization.',
+  description: 'Insights, tips, and best practices for web development, software development, and digital solutions.',
 }
 
 const BlogPage = () => {
   const blogPosts = [
     {
-      title: 'The Future of Business Automation: Trends to Watch in 2024',
-      excerpt: 'Discover the latest trends in business automation and how they can transform your organization.',
+      title: 'The Future of Web Development: Trends to Watch in 2024',
+      excerpt: 'Discover the latest trends in web development and how they can transform your online presence.',
       author: 'Sarah Johnson',
       date: '2024-01-15',
-      category: 'Automation',
+      category: 'Web Development',
       readTime: '5 min read',
-      imageQuery: 'business automation trends technology future 2024'
+      imageQuery: 'web development trends technology future 2024'
     },
     {
-      title: 'How to Choose the Right Automation Tools for Your Business',
-      excerpt: 'A comprehensive guide to selecting automation solutions that align with your business goals.',
+      title: 'How to Choose the Right Web Development Framework',
+      excerpt: 'A comprehensive guide to selecting web development frameworks that align with your project goals.',
       author: 'Michael Chen',
       date: '2024-01-10',
       category: 'Guide',
       readTime: '7 min read',
-      imageQuery: 'automation tools selection business software guide'
+      imageQuery: 'web development framework selection software guide'
     },
     {
-      title: '5 Signs Your Business Needs Process Automation',
-      excerpt: 'Learn to identify when your business processes are ready for automation and optimization.',
+      title: '5 Signs Your Business Needs a New Website',
+      excerpt: 'Learn to identify when your business is ready for a website redesign or new web application.',
       author: 'Emily Rodriguez',
       date: '2024-01-05',
-      category: 'Process',
+      category: 'Web Development',
       readTime: '4 min read',
-      imageQuery: 'business process automation workflow optimization'
+      imageQuery: 'website redesign business web development'
     },
     {
       title: 'Mobile Workforce Management: Best Practices and Tools',
@@ -48,8 +48,8 @@ const BlogPage = () => {
       imageQuery: 'mobile workforce management smartphone app field workers'
     },
     {
-      title: 'ROI of Business Automation: Measuring Success',
-      excerpt: 'How to calculate and measure the return on investment of your automation initiatives.',
+      title: 'ROI of Web Development: Measuring Success',
+      excerpt: 'How to calculate and measure the return on investment of your website and web application projects.',
       author: 'Lisa Wang',
       date: '2023-12-20',
       category: 'Analytics',
@@ -57,17 +57,17 @@ const BlogPage = () => {
       imageQuery: 'ROI analytics business metrics dashboard charts'
     },
     {
-      title: 'Data Security in Automated Business Processes',
-      excerpt: 'Best practices for maintaining security and compliance in automated workflows.',
+      title: 'Data Security in Web Applications',
+      excerpt: 'Best practices for maintaining security and compliance in web applications and software.',
       author: 'James Wilson',
       date: '2023-12-15',
       category: 'Security',
       readTime: '6 min read',
-      imageQuery: 'data security cybersecurity business compliance automation'
+      imageQuery: 'data security cybersecurity web application compliance'
     }
   ]
 
-  const categories = ['All', 'Automation', 'Guide', 'Process', 'Mobile', 'Analytics', 'Security']
+  const categories = ['All', 'Web Development', 'Guide', 'Mobile', 'Analytics', 'Security']
 
   return (
     <div className="min-h-screen">
@@ -81,7 +81,7 @@ const BlogPage = () => {
                   Our Blog
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  Insights, tips, and best practices for business automation and process optimization. 
+                  Insights, tips, and best practices for web development, software development, and digital solutions. 
                   Stay updated with the latest trends and strategies.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -97,10 +97,10 @@ const BlogPage = () => {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <BasicImage
-                    query="business blog writing content marketing automation insights"
+                    query="business blog writing content marketing web development insights"
                     width={600}
                     height={400}
-                    alt="Business blog and content marketing for automation insights"
+                    alt="Business blog and content marketing for web development insights"
                     className="w-full h-80"
                     category="business"
                   />
@@ -144,10 +144,10 @@ const BlogPage = () => {
                 <span className="text-primary-100 text-sm">5 min read</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                The Future of Business Automation: Trends to Watch in 2024
+                The Future of Web Development: Trends to Watch in 2024
               </h2>
               <p className="text-xl text-primary-100 mb-6 leading-relaxed">
-                Discover the latest trends in business automation and how they can transform your organization. 
+                Discover the latest trends in web development and how they can transform your online presence. 
                 From AI-powered workflows to no-code platforms, explore what's coming next.
               </p>
               <div className="flex items-center space-x-4 text-primary-100">
@@ -245,7 +245,7 @@ const BlogPage = () => {
               Stay Updated
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Get the latest insights on business automation delivered to your inbox.
+              Get the latest insights on web development and software solutions delivered to your inbox.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input

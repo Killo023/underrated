@@ -24,20 +24,20 @@ const Hero = () => {
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   <AnimatedText3D 
-                    text="Automate Your Business,"
+                    text="Build Your Digital Presence,"
                     delay={0.5}
                     className="block mb-2"
                   />
                   <AnimatedText3D 
-                    text="Amplify Your Growth"
+                    text="Transform Your Business"
                     delay={1}
                     className="text-gradient animate-gradient"
                   />
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Eliminate tedious, repetitive tasks through bespoke automation solutions. 
-                  Custom software, mobile apps, and SaaS platforms designed to streamline 
-                  your business processes and boost efficiency.
+                  Professional web development and custom software solutions. We create modern websites, 
+                  web applications, and software tailored to your business needs. From responsive websites 
+                  to complex web applications, we bring your vision to life.
                 </p>
               </div>
 
@@ -85,20 +85,20 @@ const Hero = () => {
               <Card3D intensity={15} className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl hover-lift">
                   <BasicImage
-                    query="software automation dashboard data visualization charts analytics"
+                    query="web development software coding programming website design"
                     width={600}
                     height={400}
-                    alt="Software automation dashboard showing data analytics and process optimization"
+                    alt="Web development and software coding workspace showing modern development tools"
                     className="w-full h-80"
-                    category="automation"
+                    category="technology"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="text-sm font-semibold text-gray-900">Automation Dashboard</div>
-                          <div className="text-xs text-gray-600">Real-time process monitoring</div>
+                          <div className="text-sm font-semibold text-gray-900">Web Development</div>
+                          <div className="text-xs text-gray-600">Modern websites & applications</div>
                         </div>
                         <div className="bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
                           Live

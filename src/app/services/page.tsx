@@ -5,109 +5,101 @@ import AnimatedWrapper from '@/components/AnimatedWrapper'
 
 export const metadata: Metadata = {
   title: 'Services - Underrated Software Solutions',
-  description: 'Comprehensive automation services including data process automation, mobile apps, SaaS solutions, and business process consulting.',
+  description: 'Professional web development and software services including custom websites, mobile apps, web applications, and custom software development.',
 }
 
 // Helper function to get appropriate image query for each service
 const getServiceImageQuery = (serviceTitle: string): string => {
   const titleLower = serviceTitle.toLowerCase()
-  if (titleLower.includes('data') || titleLower.includes('automation')) {
-    return 'analytics dashboard data visualization software interface'
+  if (titleLower.includes('web') && titleLower.includes('development')) {
+    return 'web development website design responsive modern'
   } else if (titleLower.includes('mobile')) {
-    return 'mobile app dashboard interface design'
-  } else if (titleLower.includes('saas') || titleLower.includes('custom')) {
-    return 'SaaS landing page website design interface'
-  } else if (titleLower.includes('business') || titleLower.includes('consulting')) {
-    return 'business dashboard analytics software interface'
+    return 'mobile app development smartphone interface design'
+  } else if (titleLower.includes('software') || titleLower.includes('custom')) {
+    return 'software development coding programming custom solutions'
+  } else if (titleLower.includes('application') || titleLower.includes('web app')) {
+    return 'web application development dashboard software interface'
   }
-  return 'analytics dashboard software interface'
+  return 'web development software coding programming'
 }
 
 // Helper function to get appropriate category for each service
 const getServiceCategory = (serviceTitle: string): 'business' | 'technology' | 'automation' | 'team' | 'office' => {
-  const titleLower = serviceTitle.toLowerCase()
-  if (titleLower.includes('data') || titleLower.includes('automation')) {
-    return 'automation'
-  } else if (titleLower.includes('mobile')) {
-    return 'technology'
-  } else if (titleLower.includes('saas') || titleLower.includes('custom')) {
-    return 'technology'
-  }
-  return 'business'
+  return 'technology'
 }
 
 const ServicesPage = () => {
   const services = [
     {
-      icon: Database,
-      title: 'Data Process Automation',
-      description: 'Transform your data workflows with intelligent automation that eliminates manual errors and accelerates processing.',
+      icon: Cloud,
+      title: 'Web Development',
+      description: 'Create stunning, responsive websites that work seamlessly across all devices. From simple landing pages to complex web applications.',
       features: [
-        'Automated data validation and cleansing',
-        'Real-time data processing and analysis',
-        'Custom reporting and dashboard creation',
-        'Integration with existing systems',
-        'Error handling and monitoring'
+        'Responsive design for all devices',
+        'Modern frameworks (React, Next.js)',
+        'SEO optimization',
+        'Fast loading times',
+        'Custom design and branding'
       ],
       benefits: [
-        'Reduce data processing time by 80%',
-        'Eliminate human errors in data entry',
-        'Real-time insights and reporting',
-        'Scalable and maintainable solutions'
+        'Professional online presence',
+        'Improved user experience',
+        'Better search engine rankings',
+        'Mobile-friendly design'
       ]
     },
     {
       icon: Smartphone,
-      title: 'Mobile Workforce Apps',
-      description: 'Empower your field teams with custom mobile applications that connect them to your business systems.',
+      title: 'Mobile App Development',
+      description: 'Build native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.',
       features: [
-        'Offline functionality for remote areas',
-        'Real-time data synchronization',
-        'GPS tracking and location services',
-        'Photo and document capture',
-        'Custom workflow management'
+        'Native iOS and Android development',
+        'Cross-platform solutions',
+        'User-friendly interface design',
+        'App store optimization',
+        'Push notifications and updates'
       ],
       benefits: [
-        'Increase field productivity by 40%',
-        'Improve data accuracy and timeliness',
-        'Better communication and coordination',
-        'Reduced paperwork and manual processes'
+        'Reach customers on mobile devices',
+        'Enhanced user engagement',
+        'Offline functionality',
+        'App store presence'
       ]
     },
     {
-      icon: Cloud,
-      title: 'Custom SaaS Solutions',
-      description: 'Build scalable cloud-based platforms tailored to your specific business needs and requirements.',
+      icon: Database,
+      title: 'Custom Software Development',
+      description: 'Develop tailored software solutions that address your specific business needs with scalable architecture and modern technologies.',
       features: [
-        'Multi-tenant architecture',
-        'API integrations and webhooks',
-        'Custom user management',
-        'Scalable cloud infrastructure',
-        'Advanced analytics and reporting'
+        'Custom solutions for your needs',
+        'Scalable architecture',
+        'Modern tech stack',
+        'API development and integration',
+        'Maintenance and support'
       ],
       benefits: [
-        'Reduce operational costs by 60%',
-        'Scale with your business growth',
-        'Access from anywhere, anytime',
-        'Automatic updates and maintenance'
+        'Solutions tailored to your business',
+        'Scalable with your growth',
+        'Modern and maintainable code',
+        'Long-term support available'
       ]
     },
     {
       icon: BarChart3,
-      title: 'Business Process Consulting',
-      description: 'Analyze and optimize your business processes to identify automation opportunities and best practices.',
+      title: 'Web Application Development',
+      description: 'Build powerful web applications with advanced features, real-time capabilities, and seamless user experiences.',
       features: [
-        'Comprehensive process analysis',
-        'Workflow optimization recommendations',
-        'Change management support',
-        'Training and documentation',
-        'Performance monitoring and KPIs'
+        'Full-stack development',
+        'Real-time features and updates',
+        'API development and integration',
+        'Database design and optimization',
+        'Performance optimization'
       ],
       benefits: [
-        'Identify inefficiencies and bottlenecks',
-        'Implement best practices',
-        'Improve team productivity',
-        'Ensure successful adoption'
+        'Powerful and scalable applications',
+        'Enhanced user experience',
+        'Real-time data synchronization',
+        'Seamless third-party integrations'
       ]
     }
   ]
@@ -124,8 +116,8 @@ const ServicesPage = () => {
                   Our Services
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  We provide comprehensive automation solutions designed to streamline 
-                  your business processes and boost productivity across your organization.
+                  We provide professional web development and software solutions designed to 
+                  transform your digital presence and help your business grow online.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="#services" className="btn-primary inline-flex items-center justify-center">
@@ -140,10 +132,10 @@ const ServicesPage = () => {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <BasicImage
-                    query="analytics dashboard software interface business automation"
+                    query="web development software coding programming website design"
                     width={600}
                     height={400}
-                    alt="Professional automation services dashboard and technology consulting"
+                    alt="Professional web development and software services"
                     className="w-full h-80"
                     category="technology"
                   />
@@ -259,7 +251,7 @@ const ServicesPage = () => {
                     query="website landing page design business consultation"
                     width={600}
                     height={400}
-                    alt="Business consultation and automation planning landing page"
+                    alt="Business consultation and web development planning"
                     className="w-full h-80"
                     category="business"
                   />

@@ -87,7 +87,7 @@ const ContactPage = () => {
               Get In Touch
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ready to transform your business with automation? Let&apos;s discuss your needs 
+              Ready to build your next website or software project? Let&apos;s discuss your needs 
               and create a custom solution that drives results.
             </p>
           </div>
@@ -180,7 +180,10 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   >
                     <option value="">Select a service</option>
-                    <option value="data-automation">Data Process Automation</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="mobile-app">Mobile App Development</option>
+                    <option value="custom-software">Custom Software Development</option>
+                    <option value="web-application">Web Application Development</option>
                     <option value="mobile-apps">Mobile Workforce Apps</option>
                     <option value="saas-solutions">Custom SaaS Solutions</option>
                     <option value="consulting">Business Process Consulting</option>
@@ -303,10 +306,10 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  How long does a typical automation project take?
+                  How long does a typical web development project take?
                 </h3>
                 <p className="text-gray-600">
-                  Project timelines vary based on complexity, but most automation projects are completed within 4-12 weeks. We provide detailed timelines during the consultation phase.
+                  Project timelines vary based on complexity, but most web development projects are completed within 4-12 weeks. We provide detailed timelines during the consultation phase.
                 </p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm">

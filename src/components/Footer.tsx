@@ -11,8 +11,8 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo size="lg" showText={true} className="text-white" />
             <p className="text-gray-300 text-sm leading-relaxed">
-              We provide bespoke automation solutions for business processes. 
-              Let us handle the boring stuff so you can focus on growth.
+              Professional web development and custom software solutions. 
+              We create modern websites and applications that help your business grow.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-200">
@@ -33,22 +33,22 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
-                  Data Process Automation
+                  Web Development
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
-                  Custom SaaS Solutions
+                  Mobile App Development
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
-                  Mobile Workforce Apps
+                  Custom Software
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
-                  Business Process Consulting
+                  Web Applications
                 </Link>
               </li>
             </ul>

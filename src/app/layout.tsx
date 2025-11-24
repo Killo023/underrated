@@ -10,9 +10,9 @@ import ParticleSystem from '@/components/ParticleSystem'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Underrated Software Solutions - Automation Solutions',
-  description: 'Bespoke automation solutions for business processes. Eliminate tedious, repetitive tasks through custom software, mobile apps, and SaaS platforms.',
-  keywords: 'automation, business process, custom software, mobile apps, SaaS, efficiency',
+  title: 'Underrated Software Solutions - Web & Software Development',
+  description: 'Professional web development and custom software solutions. We create modern websites, web applications, and software tailored to your business needs.',
+  keywords: 'web development, software development, custom websites, web applications, software solutions, mobile apps, SaaS',
 }
 
 export default function RootLayout({

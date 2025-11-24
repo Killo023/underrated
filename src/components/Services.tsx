@@ -6,32 +6,32 @@ import Card3D from './Card3D'
 const Services = () => {
   const services = [
     {
-      icon: Database,
-      title: 'Data Process Automation',
-      description: 'Streamline data entry, processing, and analysis with custom automation workflows that eliminate manual errors and save hours of work.',
-      features: ['Automated data validation', 'Real-time processing', 'Custom reporting'],
-      query: 'analytics dashboard data visualization software interface'
+      icon: Cloud,
+      title: 'Web Development',
+      description: 'Create stunning, responsive websites that work seamlessly across all devices. From simple landing pages to complex web applications.',
+      features: ['Responsive design', 'Modern frameworks', 'SEO optimized'],
+      query: 'web development website design responsive modern'
     },
     {
       icon: Smartphone,
-      title: 'Mobile Workforce Apps',
-      description: 'Empower your team with mobile applications that connect field workers to your business systems and improve productivity.',
-      features: ['Offline functionality', 'Real-time sync', 'Custom workflows'],
-      query: 'mobile app dashboard interface design'
+      title: 'Mobile App Development',
+      description: 'Build native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.',
+      features: ['Native & cross-platform', 'User-friendly design', 'App store optimization'],
+      query: 'mobile app development smartphone interface design'
     },
     {
-      icon: Cloud,
-      title: 'Custom SaaS Solutions',
-      description: 'Build scalable cloud-based platforms tailored to your business needs with modern architecture and seamless integrations.',
-      features: ['Scalable infrastructure', 'API integrations', 'Multi-tenant support'],
-      query: 'SaaS landing page website design interface'
+      icon: Database,
+      title: 'Custom Software Development',
+      description: 'Develop tailored software solutions that address your specific business needs with scalable architecture and modern technologies.',
+      features: ['Custom solutions', 'Scalable architecture', 'Modern tech stack'],
+      query: 'software development coding programming custom solutions'
     },
     {
       icon: BarChart3,
-      title: 'Business Process Consulting',
-      description: 'Analyze and optimize your business processes to identify automation opportunities and implement best practices.',
-      features: ['Process analysis', 'Workflow optimization', 'Change management'],
-      query: 'business dashboard analytics software interface'
+      title: 'Web Application Development',
+      description: 'Build powerful web applications with advanced features, real-time capabilities, and seamless user experiences.',
+      features: ['Full-stack development', 'Real-time features', 'API integration'],
+      query: 'web application development dashboard software interface'
     }
   ]
 
@@ -44,8 +44,8 @@ const Services = () => {
               What We Do
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We specialize in creating bespoke automation solutions that transform 
-              how your business operates, from data processing to mobile workforce management.
+              We specialize in creating professional websites and custom software solutions that 
+              transform your digital presence, from responsive websites to complex web applications.
             </p>
           </div>
         </AnimatedWrapper>
@@ -63,7 +63,7 @@ const Services = () => {
                       height={200}
                       alt={`${service.title} - ${service.description}`}
                       className="w-full h-full object-cover"
-                      category={service.title.includes('SaaS') || service.title.includes('Custom') ? 'technology' : service.title.includes('Data') || service.title.includes('Automation') ? 'automation' : 'business'}
+                      category="technology"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className="absolute top-4 right-4">

@@ -5,7 +5,7 @@ import TeamImage from './TeamImage'
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "The automation solution they built for us has saved us 20 hours per week. Our team can now focus on strategic work instead of manual data entry.",
+      quote: "The website they built for us has transformed our online presence. We've seen a 300% increase in leads and the design perfectly represents our brand.",
       author: "Sarah Johnson",
       company: "TechStart Inc.",
       role: "Operations Manager",
@@ -37,7 +37,7 @@ const Testimonials = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Don&apos;t just take our word for it. Here&apos;s what business leaders are saying 
-              about our automation solutions.
+              about our web development and software solutions.
             </p>
           </div>
         </AnimatedWrapper>
