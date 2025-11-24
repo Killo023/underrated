@@ -58,12 +58,13 @@ export const WireframeButton: React.FC<{ label?: string; variant?: 'primary' | '
   )
 }
 
-export const WireframeImage: React.FC<{ label?: string; aspectRatio?: string }> = ({ 
+export const WireframeImage: React.FC<{ label?: string; aspectRatio?: string; className?: string }> = ({ 
   label = 'Image', 
-  aspectRatio = 'aspect-video' 
+  aspectRatio = 'aspect-video',
+  className = ''
 }) => {
   return (
-    <div className={`${aspectRatio} border-2 border-dashed border-gray-400 bg-gray-100 rounded flex items-center justify-center relative`}>
+    <div className={`${aspectRatio} border-2 border-dashed border-gray-400 bg-gray-100 rounded flex items-center justify-center relative ${className}`}>
       <span className="text-xs font-mono text-gray-400">{label}</span>
     </div>
   )
