@@ -41,27 +41,27 @@ const BasicImage = ({
                     queryLower.includes('coding') ||
                     queryLower.includes('programming')
     
-    // Use specific Unsplash photo IDs that are known to work
-    // These are actual photos from Unsplash with specific IDs
+    // Use specific Unsplash photo IDs - verified dashboard and tech images
+    // These are actual high-quality photos from Unsplash
     const dashboardImages = [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Analytics dashboard
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop', // Business dashboard
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Data visualization
-      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop', // Software interface
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Analytics platform
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Analytics dashboard with charts
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Business analytics dashboard
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Software dashboard interface
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Data visualization dashboard
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Analytics platform
     ]
     
     const webDevImages = [
-      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=' + width + '&h=' + height + '&fit=crop', // Coding
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df1b3?w=' + width + '&h=' + height + '&fit=crop', // Web development
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=' + width + '&h=' + height + '&fit=crop', // Programming
-      'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=' + width + '&h=' + height + '&fit=crop', // Code editor
+      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Coding workspace
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df1b3?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Web development
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Programming workspace
+      'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Code editor screen
     ]
     
     const mobileImages = [
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=' + width + '&h=' + height + '&fit=crop', // Mobile app
-      'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=' + width + '&h=' + height + '&fit=crop', // Smartphone
-      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=' + width + '&h=' + height + '&fit=crop', // App interface
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Mobile app interface
+      'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Smartphone with app
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // App dashboard
     ]
     
     // Select image based on query

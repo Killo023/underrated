@@ -38,12 +38,13 @@ const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const getImageUrl = (query: string, width: number = 1200, height: number = 800) => {
-    // Use specific Unsplash photo IDs for dashboard images
+    // Use specific Unsplash photo IDs for dashboard images - verified dashboard photos
     const dashboardPhotos = [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Analytics dashboard
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop', // Business dashboard
-      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop', // Software interface
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Data visualization
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Analytics dashboard with charts
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Business analytics dashboard
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Software dashboard interface
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Data visualization dashboard
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop&q=80&auto=format', // Analytics platform
     ]
     
     // Use query hash to consistently select image
