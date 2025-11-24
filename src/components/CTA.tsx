@@ -13,8 +13,8 @@ const CTA = () => {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Join hundreds of businesses that have already automated their processes 
-              and are seeing significant improvements in efficiency and productivity.
+              Join hundreds of businesses that have transformed their digital presence 
+              with professional websites and custom software solutions. Let's build something amazing together.
             </p>
           
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -42,15 +42,15 @@ const CTA = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                <span className="text-white/90">Free consultation & analysis</span>
+                <span className="text-white/90">Free consultation & project analysis</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                <span className="text-white/90">Custom solution design</span>
+                <span className="text-white/90">Custom website & software design</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                <span className="text-white/90">Ongoing support & maintenance</span>
+                <span className="text-white/90">Ongoing support & updates</span>
               </div>
             </div>
           </div>
