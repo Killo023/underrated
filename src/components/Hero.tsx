@@ -22,7 +22,7 @@ const Hero = () => {
                 <div className="flex items-center justify-center lg:justify-start mb-4">
                   <Logo size="sm" showText={false} />
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   <AnimatedText3D 
                     text="Build Your Digital Presence,"
                     delay={0.5}
@@ -34,7 +34,7 @@ const Hero = () => {
                     className="text-gradient animate-gradient"
                   />
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-200 leading-relaxed">
                   Professional web development and custom software solutions. We create modern websites, 
                   web applications, and software tailored to your business needs. From responsive websites 
                   to complex web applications, we bring your vision to life.
@@ -65,16 +65,16 @@ const Hero = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 animate-pulse-slow">500+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
+                  <div className="text-3xl font-bold text-white animate-pulse-slow">500+</div>
+                  <div className="text-sm text-gray-200">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 animate-pulse-slow" style={{animationDelay: '0.5s'}}>98%</div>
-                  <div className="text-sm text-gray-600">Client Satisfaction</div>
+                  <div className="text-3xl font-bold text-white animate-pulse-slow" style={{animationDelay: '0.5s'}}>98%</div>
+                  <div className="text-sm text-gray-200">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-600 animate-pulse-slow" style={{animationDelay: '1s'}}>24/7</div>
-                  <div className="text-sm text-gray-600">Support Available</div>
+                  <div className="text-3xl font-bold text-white animate-pulse-slow" style={{animationDelay: '1s'}}>24/7</div>
+                  <div className="text-sm text-gray-200">Support Available</div>
                 </div>
               </div>
             </div>
@@ -85,10 +85,10 @@ const Hero = () => {
               <Card3D intensity={15} className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl hover-lift">
                   <BasicImage
-                    query="web development software coding programming website design"
+                    query="app dashboard software interface analytics data visualization"
                     width={600}
                     height={400}
-                    alt="Web development and software coding workspace showing modern development tools"
+                    alt="Modern app dashboard with analytics and data visualization"
                     className="w-full h-80"
                     category="technology"
                   />
@@ -97,8 +97,8 @@ const Hero = () => {
                     <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="text-sm font-semibold text-gray-900">Web Development</div>
-                          <div className="text-xs text-gray-600">Modern websites & applications</div>
+                          <div className="text-sm font-semibold text-gray-900">App Dashboard</div>
+                          <div className="text-xs text-gray-600">Real-time analytics & insights</div>
                         </div>
                         <div className="bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
                           Live

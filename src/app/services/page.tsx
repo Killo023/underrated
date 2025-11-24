@@ -132,10 +132,10 @@ const ServicesPage = () => {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <BasicImage
-                    query="web development software coding programming website design"
+                    query="app dashboard web interface analytics data visualization charts"
                     width={600}
                     height={400}
-                    alt="Professional web development and software services"
+                    alt="Modern app dashboard with analytics and data visualization"
                     className="w-full h-80"
                     category="technology"
                   />

@@ -10,28 +10,28 @@ const Services = () => {
       title: 'Web Development',
       description: 'Create stunning, responsive websites that work seamlessly across all devices. From simple landing pages to complex web applications.',
       features: ['Responsive design', 'Modern frameworks', 'SEO optimized'],
-      query: 'web development website design responsive modern'
+      query: 'app dashboard web interface analytics charts'
     },
     {
       icon: Smartphone,
       title: 'Mobile App Development',
       description: 'Build native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android.',
       features: ['Native & cross-platform', 'User-friendly design', 'App store optimization'],
-      query: 'mobile app development smartphone interface design'
+      query: 'mobile app dashboard interface analytics smartphone'
     },
     {
       icon: Database,
       title: 'Custom Software Development',
       description: 'Develop tailored software solutions that address your specific business needs with scalable architecture and modern technologies.',
       features: ['Custom solutions', 'Scalable architecture', 'Modern tech stack'],
-      query: 'software development coding programming custom solutions'
+      query: 'software dashboard analytics data visualization interface'
     },
     {
       icon: BarChart3,
       title: 'Web Application Development',
       description: 'Build powerful web applications with advanced features, real-time capabilities, and seamless user experiences.',
       features: ['Full-stack development', 'Real-time features', 'API integration'],
-      query: 'web application development dashboard software interface'
+      query: 'web app dashboard analytics real-time data interface'
     }
   ]
 

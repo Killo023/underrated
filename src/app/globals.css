@@ -87,10 +87,18 @@ body {
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, #22c55e, #ef4444);
+    background: linear-gradient(135deg, #000000, #16a34a, #ef4444);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #000000 0%, #16a34a 50%, #22c55e 100%);
+  }
+  
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #000000 0%, #111827 25%, #16a34a 75%, #22c55e 100%);
   }
 }
 
