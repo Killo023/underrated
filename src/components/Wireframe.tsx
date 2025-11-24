@@ -16,9 +16,9 @@ export const WireframeBox: React.FC<WireframeBoxProps> = ({
   children 
 }) => {
   return (
-    <div className={`border-2 border-dashed border-gray-400 bg-gray-50 rounded p-4 ${height} ${className} flex items-center justify-center relative`}>
+    <div className={`border-2 border-dashed border-gray-400 bg-gray-50 rounded p-4 ${height} ${className} flex items-center justify-center relative hover:border-gray-500 transition-colors`}>
       {label && (
-        <span className="absolute top-1 left-2 text-xs font-mono text-gray-500 bg-white px-1">
+        <span className="absolute top-1 left-2 text-xs font-mono text-gray-600 bg-white px-2 py-0.5 rounded border border-gray-300 font-semibold">
           {label}
         </span>
       )}
@@ -91,13 +91,12 @@ export const WireframeLayout: React.FC<WireframeLayoutProps> = ({
           <div className="w-3 h-3 rounded-full bg-green-400"></div>
         </div>
         <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500 font-mono">
-          {url || title}
+          {url ? `www.${url}` : title}
         </div>
       </div>
       
       {/* Content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-4">{title}</h3>
+      <div className="p-4 md:p-6">
         {children}
       </div>
     </div>

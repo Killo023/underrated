@@ -92,19 +92,44 @@ export default function WireframesPage() {
 
         {/* Wireframes Tab */}
         {activeTab === 'wireframes' && (
-          <div className="space-y-16">
+          <div className="space-y-20">
             {websites.map((website, index) => {
               const WireframeComponent = website.wireframe
               return (
-                <section key={index} className="bg-white rounded-2xl shadow-lg p-6">
-                  <div className="mb-6">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">{website.title}</h2>
-                    <p className="text-gray-600 mb-2">{website.description}</p>
-                    <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full">
-                      {website.category}
-                    </span>
+                <section key={index} className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-2 border-gray-100 hover:border-primary-200 transition-all duration-300">
+                  {/* Website Header */}
+                  <div className="mb-8 pb-6 border-b-2 border-gray-200">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                      <div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{website.title}</h2>
+                        <p className="text-lg text-gray-600 mb-3 max-w-3xl">{website.description}</p>
+                      </div>
+                      <div className="flex flex-col items-start md:items-end gap-2">
+                        <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 text-sm font-semibold rounded-full">
+                          {website.category}
+                        </span>
+                        <a 
+                          href={`https://${website.url}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-primary-600 hover:text-primary-700 text-sm font-medium flex items-center gap-1"
+                        >
+                          Visit Website →
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <WireframeComponent />
+
+                  {/* Wireframe Display */}
+                  <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200">
+                    <div className="mb-4 flex items-center justify-between">
+                      <h3 className="text-xl font-semibold text-gray-700">Website Wireframe Structure</h3>
+                      <span className="text-sm text-gray-500 font-mono">www.{website.url}</span>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 md:p-6 shadow-inner border border-gray-300">
+                      <WireframeComponent />
+                    </div>
+                  </div>
                 </section>
               )
             })}
