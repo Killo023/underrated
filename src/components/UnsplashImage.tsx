@@ -27,9 +27,11 @@ const UnsplashImage = ({
   // Use specific Unsplash photo IDs for reliable images
   const getUnsplashUrl = () => {
     const dashboardImages = [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop',
-      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop&q=80', // Analytics dashboard
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop&q=80', // Business dashboard
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop&q=80', // Software dashboard
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop&q=80', // Data visualization
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop&q=80', // Analytics platform
     ]
     
     const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
