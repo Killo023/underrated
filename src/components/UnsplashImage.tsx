@@ -24,8 +24,19 @@ const UnsplashImage = ({
 }: UnsplashImageProps) => {
   const [imageError, setImageError] = useState(false)
   
-  // Unsplash Source API - Free tier allows 50 requests per hour
-  const unsplashUrl = `https://source.unsplash.com/${width}x${height}/?${encodeURIComponent(query)}`
+  // Use specific Unsplash photo IDs for reliable images
+  const getUnsplashUrl = () => {
+    const dashboardImages = [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop',
+    ]
+    
+    const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+    return dashboardImages[queryHash % dashboardImages.length]
+  }
+  
+  const unsplashUrl = getUnsplashUrl()
   
   if (imageError) {
     return (

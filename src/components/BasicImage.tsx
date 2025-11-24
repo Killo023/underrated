@@ -21,60 +21,60 @@ const BasicImage = ({
 }: BasicImageProps) => {
   const [imageError, setImageError] = useState(false)
   
-  // Use Unsplash for free, high-quality images of dashboards and landing pages
+  // Use specific Unsplash photo IDs for reliable dashboard and tech images
   const getImageUrl = () => {
     // Determine image type based on query and category
     const queryLower = query.toLowerCase()
     const isDashboard = queryLower.includes('dashboard') || 
                        queryLower.includes('analytics') || 
                        queryLower.includes('data') ||
-                       queryLower.includes('automation') ||
-                       queryLower.includes('reporting') ||
+                       queryLower.includes('visualization') ||
                        queryLower.includes('metrics') ||
-                       category === 'automation' ||
                        category === 'technology'
     
-    const isLandingPage = queryLower.includes('landing') || 
-                         queryLower.includes('website') || 
-                         queryLower.includes('web') ||
-                         queryLower.includes('saas') ||
-                         queryLower.includes('platform') ||
-                         queryLower.includes('interface')
+    const isMobile = queryLower.includes('mobile') || 
+                    queryLower.includes('smartphone') ||
+                    queryLower.includes('app')
     
-    // Specific Unsplash queries optimized for dashboards and landing pages
-    // These queries return actual photos of dashboards and landing pages
-    let unsplashQuery = ''
-    if (isDashboard) {
-      // Dashboard-specific queries that return actual dashboard images
-      const dashboardQueries = [
-        'analytics dashboard',
-        'business dashboard',
-        'data visualization dashboard',
-        'software dashboard interface',
-        'analytics platform'
-      ]
-      const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
-      unsplashQuery = dashboardQueries[queryHash % dashboardQueries.length]
-    } else if (isLandingPage) {
-      // Landing page-specific queries that return actual landing page images
-      const landingQueries = [
-        'website landing page',
-        'landing page design',
-        'SaaS website',
-        'website homepage',
-        'web design interface'
-      ]
-      const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
-      unsplashQuery = landingQueries[queryHash % landingQueries.length]
-    } else {
-      // Default to dashboard for business/technology categories
-      unsplashQuery = 'analytics dashboard'
+    const isWebDev = queryLower.includes('web') || 
+                    queryLower.includes('development') ||
+                    queryLower.includes('coding') ||
+                    queryLower.includes('programming')
+    
+    // Use specific Unsplash photo IDs that are known to work
+    // These are actual photos from Unsplash with specific IDs
+    const dashboardImages = [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Analytics dashboard
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop', // Business dashboard
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Data visualization
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop', // Software interface
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Analytics platform
+    ]
+    
+    const webDevImages = [
+      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=' + width + '&h=' + height + '&fit=crop', // Coding
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df1b3?w=' + width + '&h=' + height + '&fit=crop', // Web development
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=' + width + '&h=' + height + '&fit=crop', // Programming
+      'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=' + width + '&h=' + height + '&fit=crop', // Code editor
+    ]
+    
+    const mobileImages = [
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=' + width + '&h=' + height + '&fit=crop', // Mobile app
+      'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=' + width + '&h=' + height + '&fit=crop', // Smartphone
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=' + width + '&h=' + height + '&fit=crop', // App interface
+    ]
+    
+    // Select image based on query
+    let imageArray = dashboardImages
+    if (isMobile) {
+      imageArray = mobileImages
+    } else if (isWebDev) {
+      imageArray = webDevImages
     }
     
-    // Use Unsplash Source API (free, no API key required)
-    // This service searches Unsplash for images matching the query
-    // Returns actual photos of dashboards and landing pages
-    return `https://source.unsplash.com/${width}x${height}/?${encodeURIComponent(unsplashQuery)}`
+    // Use hash of query to consistently select same image for same query
+    const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+    return imageArray[queryHash % imageArray.length]
   }
   
   // Fallback gradient based on category

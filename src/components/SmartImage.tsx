@@ -40,10 +40,27 @@ const SmartImage = ({
     return `${baseQuery} ${categoryModifiers[cat as keyof typeof categoryModifiers] || ''}`
   }
   
-  // Use Unsplash Source API with enhanced query and randomization
-  const randomSeed = Math.random().toString(36).substring(7)
-  const enhancedQuery = getEnhancedQuery(query, category)
-  const unsplashUrl = `https://source.unsplash.com/${width}x${height}/?${encodeURIComponent(enhancedQuery)}&sig=${randomSeed}`
+  // Use specific Unsplash photo IDs for reliable images
+  const getUnsplashUrl = () => {
+    const techImages = [
+      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df1b3?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=' + width + '&h=' + height + '&fit=crop',
+    ]
+    
+    const businessImages = [
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop',
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop',
+    ]
+    
+    const imageArray = category === 'technology' ? techImages : businessImages
+    const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+    return imageArray[queryHash % imageArray.length]
+  }
+  
+  const unsplashUrl = getUnsplashUrl()
   
   // Fallback gradient based on category
   const getFallbackGradient = () => {

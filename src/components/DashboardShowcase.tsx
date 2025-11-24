@@ -38,7 +38,17 @@ const DashboardShowcase: React.FC<DashboardShowcaseProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const getImageUrl = (query: string, width: number = 1200, height: number = 800) => {
-    return `https://source.unsplash.com/${width}x${height}/?${encodeURIComponent(query)}`
+    // Use specific Unsplash photo IDs for dashboard images
+    const dashboardPhotos = [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Analytics dashboard
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=' + width + '&h=' + height + '&fit=crop', // Business dashboard
+      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=' + width + '&h=' + height + '&fit=crop', // Software interface
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=' + width + '&h=' + height + '&fit=crop', // Data visualization
+    ]
+    
+    // Use query hash to consistently select image
+    const queryHash = query.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+    return dashboardPhotos[queryHash % dashboardPhotos.length]
   }
 
   return (
