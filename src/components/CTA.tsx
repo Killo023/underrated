@@ -14,7 +14,7 @@ const CTA = () => {
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               Join hundreds of businesses that have transformed their digital presence 
-              with professional websites and custom software solutions. Let's build something amazing together.
+              with professional websites and custom software solutions. Let&apos;s build something amazing together.
             </p>
           
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

@@ -5,7 +5,7 @@ import AnimatedWrapper from '@/components/AnimatedWrapper'
 
 export const metadata: Metadata = {
   title: 'Our Projects - Underrated Software Solutions',
-  description: 'Explore our portfolio of professional websites and digital solutions across healthcare, fitness, services, education, and legal industries.',
+  description: 'Explore our portfolio of professional websites and digital solutions developed for previous clients across healthcare, fitness, services, education, and legal industries.',
 }
 
 const ProductsPage = () => {
@@ -135,12 +135,18 @@ const ProductsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedWrapper animation="slideUp">
               <div className="text-center lg:text-left">
+                <div className="inline-block mb-4">
+                  <span className="text-sm font-semibold text-primary-600 bg-primary-50 px-4 py-2 rounded-full">
+                    Client Projects Portfolio
+                  </span>
+                </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Our Products
+                  Products Developed for Previous Clients
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
                   Explore our portfolio of professional websites and digital solutions 
-                  across healthcare, fitness, services, education, and legal industries.
+                  that we&apos;ve developed for our previous clients across healthcare, fitness, 
+                  services, education, and legal industries.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="#products" className="btn-primary inline-flex items-center justify-center">
@@ -172,8 +178,17 @@ const ProductsPage = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="section-padding bg-white">
+      <section id="products" className="section-padding bg-white">
         <div className="container-max">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Client Success Stories
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              These are real applications and websites we&apos;ve built for our clients. 
+              Each project was tailored to meet their specific business needs and goals.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <div
@@ -194,6 +209,9 @@ const ProductsPage = () => {
                     <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
                       <product.icon className="h-6 w-6 text-primary-600" />
                     </div>
+                  </div>
+                  <div className="absolute top-12 left-4 bg-primary-600/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    Client Project
                   </div>
                   {product.url && (
                     <a
@@ -276,11 +294,11 @@ const ProductsPage = () => {
         <div className="container-max">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Project Portfolio
+              Our Client Project Portfolio
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We've delivered professional websites and digital solutions across diverse industries, 
-              each tailored to meet specific business needs and goals.
+              We&apos;ve delivered professional websites and digital solutions for our clients across diverse industries, 
+              each tailored to meet their specific business needs and goals.
             </p>
           </div>
 
@@ -361,7 +379,8 @@ const ProductsPage = () => {
               Ready to Build Your Professional Website?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Let us create a custom website solution tailored to your business needs and industry.
+              Just like we did for our previous clients, we can create a custom website solution 
+              tailored to your business needs and industry.
             </p>
             <a
               href="/contact"

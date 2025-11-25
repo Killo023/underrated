@@ -65,6 +65,7 @@ const RandomImage = ({
   useEffect(() => {
     const urls = generateImageUrls()
     setImageUrl(urls[0])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, width, height, category])
   
   // Fallback gradient based on category

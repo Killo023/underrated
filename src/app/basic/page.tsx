@@ -104,7 +104,7 @@ export default function BasicPage() {
               What Our Clients Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what business leaders are saying.
+              Don&apos;t just take our word for it. Here&apos;s what business leaders are saying.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -116,7 +116,7 @@ export default function BasicPage() {
                   ))}
                 </div>
                 <blockquote className="text-gray-700 mb-6">
-                  "Testimonial {i} goes here. This is what our client said about our service."
+                  &quot;Testimonial {i} goes here. This is what our client said about our service.&quot;
                 </blockquote>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gray-300 rounded-full"></div>

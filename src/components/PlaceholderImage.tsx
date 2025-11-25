@@ -42,6 +42,7 @@ const PlaceholderImage = ({
   useEffect(() => {
     const url = generateImageUrl()
     setImageUrl(url)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, width, height])
   
   // Fallback gradient based on category

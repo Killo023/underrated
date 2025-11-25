@@ -139,7 +139,7 @@ const BlogPage = () => {
               </h2>
               <p className="text-xl text-primary-100 mb-6 leading-relaxed">
                 Discover the latest trends in web development and how they can transform your online presence. 
-                From AI-powered workflows to no-code platforms, explore what's coming next.
+                From AI-powered workflows to no-code platforms, explore what&apos;s coming next.
               </p>
               <div className="flex items-center space-x-4 text-primary-100">
                 <div className="flex items-center space-x-2">
