@@ -56,11 +56,16 @@ const Services = () => {
               <Card3D intensity={10}>
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover-lift transition-shadow duration-300">
                   {/* Service Image */}
-                  <div className="h-48 relative overflow-hidden">
+                  <div className="h-48 relative overflow-hidden bg-gray-100">
                     <img
                       src={service.image}
                       alt={`${service.title} - ${service.description}`}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback to a placeholder if image fails to load
+                        const target = e.target as HTMLImageElement
+                        target.style.display = 'none'
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className="absolute top-4 right-4">

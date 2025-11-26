@@ -115,10 +115,10 @@ export const getTechnologyImage = (index: number, width: number = 1200, height: 
 // For components that need explicit unique images by position
 export const HERO_IMAGE = `${ALL_IMAGES.dashboard[0]}?fit=crop&w=600&h=400&q=80&auto=format`
 export const SERVICES_IMAGES = [
-  `${ALL_IMAGES.webdev[0]}?fit=crop&w=400&h=200&q=80&auto=format`,
-  `${ALL_IMAGES.mobile[0]}?fit=crop&w=400&h=200&q=80&auto=format`,
-  `${ALL_IMAGES.technology[0]}?fit=crop&w=400&h=200&q=80&auto=format`,
-  `${ALL_IMAGES.webdev[1]}?fit=crop&w=400&h=200&q=80&auto=format`,
+  `${ALL_IMAGES.webdev[0]}?fit=crop&w=400&h=200&q=80&auto=format`, // Web Development
+  `${ALL_IMAGES.mobile[0]}?fit=crop&w=400&h=200&q=80&auto=format`, // Mobile App Development
+  `${ALL_IMAGES.technology[0]}?fit=crop&w=400&h=200&q=80&auto=format`, // Custom Software Development
+  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=400&h=200&q=80&auto=format', // Web Application Development - verified dashboard/analytics image
 ]
 export const DASHBOARD_SHOWCASE_IMAGES = [
   `${ALL_IMAGES.dashboard[1]}?fit=crop&w=1200&h=800&q=80&auto=format`,
