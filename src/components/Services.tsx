@@ -1,3 +1,5 @@
+'use client'
+
 import { Database, Smartphone, Cloud, BarChart3 } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
 import Card3D from './Card3D'
