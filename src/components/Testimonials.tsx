@@ -12,7 +12,7 @@ const Testimonials = () => {
       rating: 5
     },
     {
-      quote: "Their mobile app transformed how our field team operates. We&apos;ve seen a 40% increase in productivity and much better data accuracy.",
+      quote: "Their mobile app transformed how our field team operates. We've seen a 40% increase in productivity and much better data accuracy.",
       author: "Michael Chen",
       company: "FieldForce Solutions",
       role: "CEO",

@@ -129,3 +129,4 @@ const FurnitureWireframe = () => {
 export default FurnitureWireframe
 
 
+
