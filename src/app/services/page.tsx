@@ -88,7 +88,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-white section-padding">
+      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedWrapper animation="slideUp">
@@ -137,8 +137,8 @@ const ServicesPage = () => {
                 }`}
               >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                    <service.icon className="h-8 w-8 text-primary-600" />
+                  <div className="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6">
+                    <service.icon className="h-8 w-8 text-white" />
                   </div>
                   
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -155,7 +155,7 @@ const ServicesPage = () => {
                       <ul className="space-y-2">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-3"></div>
+                            <div className="w-1.5 h-1.5 bg-black rounded-full mr-3"></div>
                             {feature}
                           </li>
                         ))}
@@ -186,7 +186,7 @@ const ServicesPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     <div className="absolute top-4 left-4">
                       <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                        <service.icon className="h-6 w-6 text-primary-600" />
+                        <service.icon className="h-6 w-6 text-black" />
                       </div>
                     </div>
                   </div>
@@ -198,7 +198,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-50 to-secondary-50">
+      <section className="section-padding bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedWrapper animation="slideUp">

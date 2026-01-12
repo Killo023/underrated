@@ -13,7 +13,7 @@ export default function Home() {
       <Services />
       
       {/* Dashboard Showcase Section */}
-      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-primary-900">
+      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-gray-800">
         <div className="container-max">
           <AnimatedWrapper animation="fadeIn">
             <div className="text-center mb-12">

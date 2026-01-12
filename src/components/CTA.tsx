@@ -5,7 +5,7 @@ import Button3D from './Button3D'
 
 const CTA = () => {
   return (
-    <section className="section-padding bg-gradient-to-r from-black via-primary-600 to-secondary-600">
+    <section className="section-padding bg-gradient-to-r from-black via-gray-900 to-gray-800">
       <div className="container-max">
         <AnimatedWrapper animation="fadeIn">
           <div className="text-center text-white">
@@ -21,7 +21,7 @@ const CTA = () => {
               <Button3D 
                 variant="secondary" 
                 size="lg"
-                className="bg-white text-primary-600 hover:bg-gray-100"
+                className="bg-white text-black hover:bg-gray-100"
               >
                 <Link href="/contact" className="flex items-center">
                   Get Your Free Consultation
@@ -31,7 +31,7 @@ const CTA = () => {
               <Button3D 
                 variant="accent" 
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary-600"
+                className="border-2 border-white text-white hover:bg-white hover:text-black"
               >
                 <Link href="/contact" className="flex items-center">
                   Schedule a Demo

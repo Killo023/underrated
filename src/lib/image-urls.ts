@@ -12,6 +12,9 @@ export const ALL_IMAGES = {
     'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3', // Dashboard on screen
     'https://images.unsplash.com/photo-1559136555-9303baea8ebd', // Business analytics meeting
     'https://images.unsplash.com/photo-1553877522-43269d4ea984', // Team meeting with dashboard
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop', // Modern analytics
+    'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop', // Data visualization
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop', // Charts and graphs
   ],
   
   // Web Development & Coding images
@@ -24,6 +27,8 @@ export const ALL_IMAGES = {
     'https://images.unsplash.com/photo-1555066931-4365d14bab8c', // Code on screen
     'https://images.unsplash.com/photo-1517694712202-14dd9538aa97', // MacBook with code
     'https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2', // Developer typing
+    'https://images.unsplash.com/photo-1555066931-ba180c421c9a?w=1200&h=800&fit=crop', // Modern code editor
+    'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop', // Development workspace
   ],
   
   // Mobile App images
@@ -33,6 +38,8 @@ export const ALL_IMAGES = {
     'https://images.unsplash.com/photo-1526498460520-4c246339dccb', // Multiple phones
     'https://images.unsplash.com/photo-1565849904461-04a58ad377e0', // App development
     'https://images.unsplash.com/photo-1522125670776-3c7abb882bc2', // Tablet and phone
+    'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&h=800&fit=crop', // Modern mobile UI
+    'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=1200&h=800&fit=crop', // App interface design
   ],
   
   // Business & Professional images
@@ -42,6 +49,9 @@ export const ALL_IMAGES = {
     'https://images.unsplash.com/photo-1600880292203-757bb62b4baf', // Office workspace
     'https://images.unsplash.com/photo-1556761175-5973dc0f32e7', // Modern office
     'https://images.unsplash.com/photo-1497366216548-37526070297c', // Corporate building
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop', // Team collaboration
+    'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&h=800&fit=crop', // Professional workspace
+    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop', // Business team
   ],
   
   // Technology & Innovation images
@@ -51,6 +61,9 @@ export const ALL_IMAGES = {
     'https://images.unsplash.com/photo-1531297484001-80022131f5a1', // Tech abstract
     'https://images.unsplash.com/photo-1550751827-4bd374c3f58b', // Digital technology
     'https://images.unsplash.com/photo-1519389950473-47ba0277781c', // Team with laptops
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=800&fit=crop', // Modern tech
+    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&h=800&fit=crop', // Innovation
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=800&fit=crop', // Digital transformation
   ],
 }
 

@@ -15,13 +15,13 @@ const Footer = () => {
               We create modern websites and applications that help your business grow.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Github className="h-5 w-5" />
               </a>
             </div>
@@ -32,22 +32,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Mobile App Development
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Custom Software
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Web Applications
                 </Link>
               </li>
@@ -59,27 +59,27 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Products</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/products" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/products" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Mobile Applications
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/products" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   SaaS Platforms
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/products" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Custom Software
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/products" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   API Integrations
                 </Link>
               </li>
               <li>
-                <Link href="/gallery" className="text-gray-300 hover:text-primary-400 transition-colors duration-200 text-sm">
+                <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Image Gallery
                 </Link>
               </li>
@@ -91,15 +91,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-primary-400" />
+                <Mail className="h-4 w-4 text-white" />
                 <span className="text-gray-300 text-sm">cylehendricks@underratedsecurity.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-primary-400" />
+                <Phone className="h-4 w-4 text-white" />
                 <span className="text-gray-300 text-sm">079 477 2031</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-primary-400" />
+                <MapPin className="h-4 w-4 text-white" />
                 <span className="text-gray-300 text-sm">5 Hexriver Street, Winchester Hills</span>
               </div>
             </div>
@@ -113,10 +113,10 @@ const Footer = () => {
               © 2024 Underrated Software Solutions. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-primary-400 transition-colors duration-200 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-primary-400 transition-colors duration-200 text-sm">
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                 Terms of Service
               </Link>
             </div>

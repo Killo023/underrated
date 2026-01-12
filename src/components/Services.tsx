@@ -72,7 +72,7 @@ const Services = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     <div className="absolute top-4 right-4">
                       <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                        <service.icon className="h-6 w-6 text-primary-600" />
+                        <service.icon className="h-6 w-6 text-black" />
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ const Services = () => {
                     <ul className="space-y-2">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-sm text-gray-500">
-                          <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-2"></div>
+                          <div className="w-1.5 h-1.5 bg-black rounded-full mr-2"></div>
                           {feature}
                         </li>
                       ))}

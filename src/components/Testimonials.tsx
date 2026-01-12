@@ -46,7 +46,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <AnimatedWrapper key={index} animation="scale" delay={index * 0.1}>
               <div className="bg-gray-50 rounded-xl p-8 relative hover-lift transition-shadow duration-300">
-              <Quote className="h-8 w-8 text-primary-200 absolute top-6 right-6" />
+              <Quote className="h-8 w-8 text-gray-300 absolute top-6 right-6" />
               
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -82,7 +82,7 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 text-white">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold mb-2">500+</div>

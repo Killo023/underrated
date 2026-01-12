@@ -49,7 +49,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
               >
                 {item.name}
               </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-primary-600 transition-colors duration-200"
+              className="text-gray-700 hover:text-black transition-colors duration-200"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -81,7 +81,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-100 rounded-md font-medium transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-md font-medium transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

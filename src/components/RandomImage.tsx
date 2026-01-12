@@ -21,7 +21,7 @@ const RandomImage = ({
   alt, 
   className = '',
   priority = false,
-  fallbackColor = 'bg-gradient-to-br from-primary-100 to-secondary-100',
+  fallbackColor = 'bg-gradient-to-br from-gray-100 to-gray-200',
   category = 'business'
 }: RandomImageProps) => {
   const [imageError, setImageError] = useState(false)

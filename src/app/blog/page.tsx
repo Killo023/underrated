@@ -66,7 +66,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-white section-padding">
+      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedWrapper animation="slideUp">
@@ -112,7 +112,7 @@ const BlogPage = () => {
                 key={category}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                   category === 'All'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-black text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -126,22 +126,22 @@ const BlogPage = () => {
       {/* Featured Post */}
       <section className="section-padding bg-white">
         <div className="container-max">
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white mb-16">
+          <div className="bg-gradient-to-r from-black to-gray-900 rounded-2xl p-8 md:p-12 text-white mb-16">
             <div className="max-w-3xl">
               <div className="flex items-center space-x-4 mb-4">
-                <span className="bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
                   Featured
                 </span>
-                <span className="text-primary-100 text-sm">5 min read</span>
+                <span className="text-gray-300 text-sm">5 min read</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 The Future of Web Development: Trends to Watch in 2024
               </h2>
-              <p className="text-xl text-primary-100 mb-6 leading-relaxed">
+              <p className="text-xl text-gray-200 mb-6 leading-relaxed">
                 Discover the latest trends in web development and how they can transform your online presence. 
                 From AI-powered workflows to no-code platforms, explore what&apos;s coming next.
               </p>
-              <div className="flex items-center space-x-4 text-primary-100">
+              <div className="flex items-center space-x-4 text-gray-300">
                 <div className="flex items-center space-x-2">
                   <User className="h-4 w-4" />
                   <span className="text-sm">Sarah Johnson</span>
@@ -178,7 +178,7 @@ const BlogPage = () => {
                 {/* Post Content */}
                 <div className="p-6">
                   <div className="flex items-center space-x-4 mb-3">
-                    <span className="bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-xs font-semibold">
+                    <span className="bg-gray-100 text-black px-3 py-1 rounded-full text-xs font-semibold border border-black">
                       {post.category}
                     </span>
                     <span className="text-gray-500 text-sm">{post.readTime}</span>
@@ -205,7 +205,7 @@ const BlogPage = () => {
                     </div>
                     <Link
                       href="#"
-                      className="text-primary-600 hover:text-primary-700 font-semibold text-sm flex items-center"
+                      className="text-black hover:text-gray-700 font-semibold text-sm flex items-center"
                     >
                       Read More
                       <ArrowRight className="ml-1 h-4 w-4" />
@@ -226,7 +226,7 @@ const BlogPage = () => {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="section-padding bg-gradient-to-r from-black to-gray-900">
         <div className="container-max">
           <div className="max-w-2xl mx-auto text-center text-white">
             <h2 className="text-3xl font-bold mb-4">
@@ -239,9 +239,9 @@ const BlogPage = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-300"
+                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
               />
-              <button className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+              <button className="bg-white text-black hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
                 Subscribe
               </button>
             </div>

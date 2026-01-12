@@ -130,13 +130,13 @@ const ProductsPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-white section-padding">
+      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedWrapper animation="slideUp">
               <div className="text-center lg:text-left">
                 <div className="inline-block mb-4">
-                  <span className="text-sm font-semibold text-primary-600 bg-primary-50 px-4 py-2 rounded-full">
+                  <span className="text-sm font-semibold text-black bg-gray-100 px-4 py-2 rounded-full border-2 border-black">
                     Client Projects Portfolio
                   </span>
                 </div>
@@ -207,10 +207,10 @@ const ProductsPage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   <div className="absolute top-4 right-4">
                     <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
-                      <product.icon className="h-6 w-6 text-primary-600" />
+                      <product.icon className="h-6 w-6 text-black" />
                     </div>
                   </div>
-                  <div className="absolute top-12 left-4 bg-primary-600/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="absolute top-12 left-4 bg-black/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
                     Client Project
                   </div>
                   {product.url && (
@@ -218,7 +218,7 @@ const ProductsPage = () => {
                       href={product.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-4 left-4 text-white hover:text-primary-200 transition-colors bg-black/30 backdrop-blur-sm rounded-lg p-2"
+                      className="absolute top-4 left-4 text-white hover:text-gray-200 transition-colors bg-black/30 backdrop-blur-sm rounded-lg p-2"
                       title="Visit Website"
                     >
                       <ExternalLink className="h-5 w-5" />
@@ -228,7 +228,7 @@ const ProductsPage = () => {
                     <h2 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
                       {product.title}
                     </h2>
-                    <span className="text-xs font-semibold text-white bg-primary-600/80 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-white bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
                       {product.category}
                     </span>
                   </div>
@@ -257,7 +257,7 @@ const ProductsPage = () => {
                     <ul className="space-y-2">
                       {product.benefits.map((benefit, benefitIndex) => (
                         <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
-                          <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-2"></div>
+                          <div className="w-1.5 h-1.5 bg-black rounded-full mr-2"></div>
                           {benefit}
                         </li>
                       ))}
@@ -372,7 +372,7 @@ const ProductsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-secondary-600">
+      <section className="section-padding bg-gradient-to-r from-black to-gray-900">
         <div className="container-max">
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-4">
@@ -384,7 +384,7 @@ const ProductsPage = () => {
             </p>
             <a
               href="/contact"
-              className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+              className="bg-white text-black hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
             >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />

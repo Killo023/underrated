@@ -54,7 +54,7 @@ const PlaceholderImage = ({
       team: 'bg-gradient-to-br from-orange-100 to-yellow-200',
       office: 'bg-gradient-to-br from-gray-100 to-slate-200'
     }
-    return gradients[category] || 'bg-gradient-to-br from-primary-100 to-secondary-100'
+    return gradients[category] || 'bg-gradient-to-br from-gray-100 to-gray-200'
   }
 
   const handleError = () => {

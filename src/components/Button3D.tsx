@@ -23,9 +23,9 @@ const Button3D = ({
   const [isPressed, setIsPressed] = useState(false)
 
   const variants = {
-    primary: 'bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-primary-500/50',
+    primary: 'bg-gradient-to-br from-black to-gray-900 text-white shadow-black/50',
     secondary: 'bg-gradient-to-br from-gray-500 to-gray-700 text-white shadow-gray-500/50',
-    accent: 'bg-gradient-to-br from-secondary-500 to-secondary-700 text-white shadow-secondary-500/50'
+    accent: 'bg-gradient-to-br from-gray-800 to-black text-white shadow-gray-800/50'
   }
 
   const sizes = {
