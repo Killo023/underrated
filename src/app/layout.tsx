@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: 'Underrated Software Solutions - Web & Software Development',
   description: 'Professional web development and custom software solutions. We create modern websites, web applications, and software tailored to your business needs.',
   keywords: 'web development, software development, custom websites, web applications, software solutions, mobile apps, SaaS',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/favicon.svg', sizes: '180x180', type: 'image/svg+xml' },
+    ],
+  },
 }
 
 export default function RootLayout({
