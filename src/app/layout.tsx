@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Favicon from '@/components/Favicon'
 import AnimatedBackground3D from '@/components/AnimatedBackground3D'
 import ParticleSystem from '@/components/ParticleSystem'
 
@@ -22,9 +21,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <Favicon />
-      </head>
       <body className={inter.className}>
         <AnimatedBackground3D />
         <ParticleSystem />
