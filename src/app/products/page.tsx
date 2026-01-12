@@ -130,8 +130,18 @@ const ProductsPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-max">
+      <section className="relative section-padding overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/95"></div>
+        </div>
+        
+        <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedWrapper animation="slideUp">
               <div className="text-center lg:text-left">
@@ -372,8 +382,18 @@ const ProductsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-black to-gray-900">
-        <div className="container-max">
+      <section className="relative section-padding overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1518770660439-4636190af475?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/85 to-gray-900/90"></div>
+        </div>
+        
+        <div className="container-max relative z-10">
           <div className="text-center text-white">
             <h2 className="text-3xl font-bold mb-4">
               Ready to Build Your Professional Website?

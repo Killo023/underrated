@@ -13,8 +13,18 @@ export default function Home() {
       <Services />
       
       {/* Dashboard Showcase Section */}
-      <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-gray-800">
-        <div className="container-max">
+      <section className="relative section-padding overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-gray-900/85 to-gray-800/90"></div>
+        </div>
+        
+        <div className="container-max relative z-10">
           <AnimatedWrapper animation="fadeIn">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

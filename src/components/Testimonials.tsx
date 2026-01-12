@@ -1,6 +1,7 @@
 import { Star, Quote } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
 import TeamImage from './TeamImage'
+import { ALL_IMAGES } from '@/lib/image-urls'
 
 const Testimonials = () => {
   const testimonials = [
@@ -28,8 +29,18 @@ const Testimonials = () => {
   ]
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-max">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${ALL_IMAGES.business[1]}?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95"></div>
+      </div>
+      
+      <div className="container-max relative z-10">
         <AnimatedWrapper animation="fadeIn">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

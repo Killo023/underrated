@@ -8,11 +8,22 @@ import Logo from './Logo'
 import AnimatedText3D from './AnimatedText3D'
 import Button3D from './Button3D'
 import Card3D from './Card3D'
-import { HERO_IMAGE } from '@/lib/image-urls'
+import { HERO_IMAGE, ALL_IMAGES } from '@/lib/image-urls'
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-white section-padding overflow-hidden">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${ALL_IMAGES.business[2]}?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-gray-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+      </div>
+      
       <div className="container-max relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -22,7 +33,7 @@ const Hero = () => {
                 <div className="flex items-center justify-center lg:justify-start mb-4">
                   <Logo size="sm" showText={false} />
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
                   <AnimatedText3D 
                     text="Build Your Digital Presence,"
                     delay={0.5}
@@ -34,7 +45,7 @@ const Hero = () => {
                     className="text-gradient animate-gradient"
                   />
                 </h1>
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-xl text-gray-200 leading-relaxed drop-shadow-md">
                   Professional web development and custom software solutions. We create modern websites, 
                   web applications, and software tailored to your business needs. From responsive websites 
                   to complex web applications, we bring your vision to life.
@@ -57,16 +68,16 @@ const Hero = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 animate-pulse-slow">500+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
+                  <div className="text-3xl font-bold text-white animate-pulse-slow drop-shadow-lg">500+</div>
+                  <div className="text-sm text-gray-200">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 animate-pulse-slow" style={{animationDelay: '0.5s'}}>98%</div>
-                  <div className="text-sm text-gray-600">Client Satisfaction</div>
+                  <div className="text-3xl font-bold text-white animate-pulse-slow drop-shadow-lg" style={{animationDelay: '0.5s'}}>98%</div>
+                  <div className="text-sm text-gray-200">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 animate-pulse-slow" style={{animationDelay: '1s'}}>24/7</div>
-                  <div className="text-sm text-gray-600">Support Available</div>
+                  <div className="text-3xl font-bold text-white animate-pulse-slow drop-shadow-lg" style={{animationDelay: '1s'}}>24/7</div>
+                  <div className="text-sm text-gray-200">Support Available</div>
                 </div>
               </div>
             </div>

@@ -2,11 +2,22 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
 import Button3D from './Button3D'
+import { ALL_IMAGES } from '@/lib/image-urls'
 
 const CTA = () => {
   return (
-    <section className="section-padding bg-gradient-to-r from-black via-gray-900 to-gray-800">
-      <div className="container-max">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${ALL_IMAGES.technology[0]}?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/85 to-gray-900/90"></div>
+      </div>
+      
+      <div className="container-max relative z-10">
         <AnimatedWrapper animation="fadeIn">
           <div className="text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">

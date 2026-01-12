@@ -55,6 +55,29 @@ body {
     @apply max-w-7xl mx-auto;
   }
   
+  /* Background Image Styles */
+  .bg-image-overlay {
+    position: relative;
+  }
+  
+  .bg-image-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  
+  .bg-image-overlay > * {
+    position: relative;
+    z-index: 1;
+  }
+  
   /* Custom Animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;

@@ -2,7 +2,7 @@
 
 import { Code, Smartphone, Globe, Database, Zap, Shield, BarChart3, Users, Settings, Rocket } from 'lucide-react'
 import AnimatedWrapper from './AnimatedWrapper'
-import { DETAILED_FEATURES_IMAGES } from '@/lib/image-urls'
+import { DETAILED_FEATURES_IMAGES, ALL_IMAGES } from '@/lib/image-urls'
 
 const DetailedFeatures = () => {
   const features = [
@@ -129,8 +129,18 @@ const DetailedFeatures = () => {
   ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-black via-gray-900 to-primary-900">
-      <div className="container-max">
+    <section className="relative section-padding overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${ALL_IMAGES.technology[2]}?fit=crop&w=1920&h=1080&q=80&auto=format)`,
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-gray-900/85 to-black/90"></div>
+      </div>
+      
+      <div className="container-max relative z-10">
         <AnimatedWrapper animation="fadeIn">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -146,9 +156,9 @@ const DetailedFeatures = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <AnimatedWrapper key={index} animation="slideUp" delay={index * 0.1}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-white/20 hover:border-primary-500 transition-all duration-300">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border-2 border-white/20 hover:border-white/40 transition-all duration-300">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-black rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-black rounded-lg flex items-center justify-center flex-shrink-0">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
@@ -172,7 +182,7 @@ const DetailedFeatures = () => {
                 <ul className="space-y-2">
                   {feature.details.map((detail, detailIndex) => (
                     <li key={detailIndex} className="flex items-start text-sm text-gray-300">
-                      <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-white rounded-full mr-2 mt-1.5 flex-shrink-0"></div>
                       <span>{detail}</span>
                     </li>
                   ))}

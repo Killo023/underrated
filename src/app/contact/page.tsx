@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { ALL_IMAGES } from '@/lib/image-urls'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
