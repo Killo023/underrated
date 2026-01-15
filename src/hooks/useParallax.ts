@@ -3,14 +3,20 @@
 import { useScroll, useTransform } from 'framer-motion'
 import { RefObject } from 'react'
 
+type ScrollOffset = 
+  | [string, string]
+  | string
+  | number
+  | Array<number | string>
+
 export const useParallax = (
   ref: RefObject<HTMLElement>,
   speed: number = 0.5,
-  offset: Parameters<typeof useScroll>[0]['offset'] = ['start end', 'end start'] as const
+  offset: ScrollOffset = ['start end', 'end start']
 ) => {
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset
+    offset: offset as any
   })
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -100 * speed])
