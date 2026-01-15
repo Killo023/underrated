@@ -1,12 +1,12 @@
 'use client'
 
-import { useScroll, useTransform, type ScrollOffset } from 'framer-motion'
+import { useScroll, useTransform } from 'framer-motion'
 import { RefObject } from 'react'
 
 export const useParallax = (
   ref: RefObject<HTMLElement>,
   speed: number = 0.5,
-  offset: ScrollOffset = ['start end', 'end start']
+  offset: Parameters<typeof useScroll>[0]['offset'] = ['start end', 'end start'] as const
 ) => {
   const { scrollYProgress } = useScroll({
     target: ref,
