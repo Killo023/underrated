@@ -118,6 +118,7 @@ const Floating3D = ({
             top: `${element.y}%`,
             width: element.size,
             height: element.size,
+            transformStyle: 'preserve-3d'
           }}
           initial={{ 
             opacity: 0,
@@ -140,9 +141,6 @@ const Floating3D = ({
             delay: element.delay,
             repeat: Infinity,
             ease: 'easeInOut'
-          }}
-          style={{
-            transformStyle: 'preserve-3d'
           }}
         >
           {renderShape(element)}
