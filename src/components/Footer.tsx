@@ -78,11 +78,6 @@ const Footer = () => {
                   API Integrations
                 </Link>
               </li>
-              <li>
-                <Link href="/gallery" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
-                  Image Gallery
-                </Link>
-              </li>
             </ul>
           </div>
 
