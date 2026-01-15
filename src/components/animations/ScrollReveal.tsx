@@ -31,7 +31,8 @@ const ScrollReveal = ({
   })
 
   const preset = animationPresets[animation]
-  const customDuration = duration !== undefined ? duration : preset.transition.duration
+  const defaultDuration = 'duration' in preset.transition ? preset.transition.duration : 0.6
+  const customDuration = duration !== undefined ? duration : defaultDuration
 
   return (
     <motion.div
@@ -40,7 +41,7 @@ const ScrollReveal = ({
       animate={isInView ? preset.animate : preset.initial}
       transition={{
         ...preset.transition,
-        duration: customDuration,
+        ...('duration' in preset.transition ? { duration: customDuration } : {}),
         delay
       }}
       className={className}
