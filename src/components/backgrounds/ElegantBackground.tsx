@@ -158,7 +158,7 @@ const ElegantBackground = ({
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             width: 100 + Math.random() * 200,
-            background: `linear-gradient(90deg, transparent, rgba(0, 61, 153, 0.2), transparent)`
+            background: `linear-gradient(90deg, transparent, rgba(0, 31, 92, 0.2), transparent)`
           }}
           animate={{
             x: [0, 300, -200, 0],
