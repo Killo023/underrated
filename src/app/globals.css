@@ -102,13 +102,13 @@ body {
   
   /* Premium Shadow System */
   .shadow-premium {
-    box-shadow: 0 4px 20px rgba(0, 31, 92, 0.15), 
+    box-shadow: 0 4px 20px rgba(0, 119, 230, 0.15), 
                 0 0 40px rgba(0, 0, 0, 0.1),
                 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   }
   
   .shadow-premium-lg {
-    box-shadow: 0 10px 40px rgba(0, 31, 92, 0.2), 
+    box-shadow: 0 10px 40px rgba(0, 119, 230, 0.2), 
                 0 0 60px rgba(0, 0, 0, 0.15),
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   }
@@ -157,7 +157,7 @@ body {
   }
   
   .text-gradient-gold {
-    background: linear-gradient(135deg, #00194d 0%, #00133d 50%, #001f5c 100%);
+    background: linear-gradient(135deg, #0066cc 0%, #0055b3 50%, #0077e6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -171,7 +171,7 @@ body {
   }
   
   .text-gradient-elegant {
-    background: linear-gradient(135deg, #FFFFFF 0%, #E8E8E8 30%, #00194d 60%, #001f5c 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #E8E8E8 30%, #0066cc 60%, #0077e6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

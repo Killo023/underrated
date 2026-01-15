@@ -98,7 +98,7 @@ const Floating3D = ({
             style={{
               width: element.size,
               height: element.size,
-              background: `conic-gradient(from 0deg, rgba(0, 31, 92, 0.3), transparent, rgba(0, 31, 92, 0.3))`
+              background: `conic-gradient(from 0deg, rgba(0, 119, 230, 0.3), transparent, rgba(0, 119, 230, 0.3))`
             }}
           />
         )
