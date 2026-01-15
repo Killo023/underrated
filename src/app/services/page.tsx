@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import { Database, Smartphone, Cloud, BarChart3, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import ScrollReveal from '@/components/animations/ScrollReveal'
@@ -11,11 +10,6 @@ import EnhancedCard3D from '@/components/3D/EnhancedCard3D'
 import MagneticButton from '@/components/3D/MagneticButton'
 import ElegantBackground from '@/components/backgrounds/ElegantBackground'
 import { SERVICES_PAGE_HERO, SERVICES_PAGE_IMAGES, SERVICES_PAGE_CTA } from '@/lib/image-urls'
-
-export const metadata: Metadata = {
-  title: 'Services - Underrated Software Solutions',
-  description: 'Professional web development and software services including custom websites, mobile apps, web applications, and custom software development.',
-}
 
 
 const ServicesPage = () => {

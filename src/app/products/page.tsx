@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Heart, Dumbbell, Sparkles, GraduationCap, Scale, ArrowRight, CheckCircle, ExternalLink } from 'lucide-react'
@@ -12,11 +11,6 @@ import Text3D from '@/components/3D/Text3D'
 import EnhancedCard3D from '@/components/3D/EnhancedCard3D'
 import MagneticButton from '@/components/3D/MagneticButton'
 import ElegantBackground from '@/components/backgrounds/ElegantBackground'
-
-export const metadata: Metadata = {
-  title: 'Our Projects - Underrated Software Solutions',
-  description: 'Explore our portfolio of professional websites and digital solutions developed for previous clients across healthcare, fitness, services, education, and legal industries.',
-}
 
 const ProductsPage = () => {
   const products = [
