@@ -101,7 +101,7 @@ const Text3D = ({
             style={{
               transformStyle: 'preserve-3d',
               display: 'inline-block',
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(212, 175, 55, 0.2)'
+              textShadow: '0 4px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 61, 153, 0.2)'
             }}
           >
             {char === ' ' ? '\u00A0' : char}

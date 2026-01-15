@@ -111,7 +111,7 @@ const BlogPage = () => {
         />
         
         <div className="container-max relative z-10 section-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <ScrollReveal animation="elegantSlide">
               <div className="space-y-8">
                 <Text3D

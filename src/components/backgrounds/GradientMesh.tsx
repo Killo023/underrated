@@ -10,7 +10,7 @@ interface GradientMeshProps {
 
 const GradientMesh = ({ 
   className = '',
-  colors = ['rgba(212, 175, 55, 0.1)', 'rgba(192, 192, 192, 0.1)', 'rgba(0, 0, 0, 0.2)']
+  colors = ['rgba(0, 31, 92, 0.1)', 'rgba(192, 192, 192, 0.1)', 'rgba(0, 0, 0, 0.2)']
 }: GradientMeshProps) => {
   const [mounted, setMounted] = useState(false)
 

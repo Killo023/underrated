@@ -107,7 +107,7 @@ const MagneticButton = ({
         damping: 25
       }}
       whileHover={!disabled ? {
-        boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 60px rgba(212, 175, 55, 0.3)'
+        boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 60px rgba(0, 31, 92, 0.3)'
       } : {}}
       whileTap={!disabled ? {
         scale: 0.95,

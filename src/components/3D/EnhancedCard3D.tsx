@@ -88,7 +88,7 @@ const EnhancedCard3D = ({
         animate={{
           scale: isHovered ? 1.02 : 1,
           boxShadow: isHovered 
-            ? '0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 0 40px rgba(212, 175, 55, 0.2)'
+            ? '0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 0 40px rgba(0, 31, 92, 0.2)'
             : '0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset'
         }}
         style={{

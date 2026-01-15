@@ -42,7 +42,7 @@ const Hero = () => {
         />
       </ParallaxSection>
 
-      {/* Gold gradient overlay */}
+      {/* Navy gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-gold-500/5 via-transparent to-gold-500/5" />
       
       <div className="container-max relative z-10 section-padding">

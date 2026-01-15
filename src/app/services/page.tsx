@@ -102,7 +102,7 @@ const ServicesPage = () => {
         />
         
         <div className="container-max relative z-10 section-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <ScrollReveal animation="elegantSlide">
               <div className="space-y-8">
                 <Text3D
@@ -160,7 +160,7 @@ const ServicesPage = () => {
                   animation={index % 2 === 0 ? 'slideRight' : 'slideLeft'}
                   delay={index * 0.2}
                 >
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto ${
                     index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
                   }`}>
                     <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>

@@ -102,7 +102,7 @@ export const hoverAnimations = {
   },
   
   glow: {
-    boxShadow: '0 0 30px rgba(255, 215, 0, 0.5)',
+    boxShadow: '0 0 30px rgba(0, 31, 92, 0.5)',
     scale: 1.02,
     transition: { duration: 0.3, ease: 'easeOut' }
   },

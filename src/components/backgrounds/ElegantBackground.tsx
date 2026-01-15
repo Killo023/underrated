@@ -49,11 +49,11 @@ const ElegantBackground = ({
         }}
       />
 
-      {/* Subtle gold gradient overlay */}
+      {/* Subtle navy gradient overlay */}
       <motion.div
         className="absolute inset-0 opacity-30"
         style={{
-          background: 'radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.1), transparent 70%)'
+          background: 'radial-gradient(circle at 30% 30%, rgba(0, 31, 92, 0.1), transparent 70%)'
         }}
         animate={{
           opacity: [0.2, 0.3, 0.2]
@@ -143,7 +143,7 @@ const ElegantBackground = ({
             className="w-full h-full rounded-full"
             style={{
               background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%), 
-                          linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05))`
+                          linear-gradient(135deg, rgba(0, 31, 92, 0.1), rgba(0, 25, 77, 0.05))`
             }}
           />
         </motion.div>
@@ -158,7 +158,7 @@ const ElegantBackground = ({
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             width: 100 + Math.random() * 200,
-            background: `linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent)`
+            background: `linear-gradient(90deg, transparent, rgba(0, 61, 153, 0.2), transparent)`
           }}
           animate={{
             x: [0, 300, -200, 0],

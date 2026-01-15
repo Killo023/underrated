@@ -68,7 +68,7 @@ const Navbar = () => {
                     className="relative text-white/90 font-medium text-sm uppercase tracking-wider cursor-pointer group"
                     whileHover={{ 
                       y: -2,
-                      color: '#FFD700'
+                      color: '#1a75ff'
                     }}
                     transition={{ duration: 0.2 }}
                   >

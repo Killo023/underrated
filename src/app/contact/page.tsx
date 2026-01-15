@@ -113,7 +113,7 @@ const ContactPage = () => {
       <section className="section-padding relative overflow-hidden">
         <ElegantBackground intensity="low" />
         <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
             <ScrollReveal animation="slideRight">
               <EnhancedCard3D glowColor="gold" className="p-8">

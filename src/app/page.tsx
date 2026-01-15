@@ -82,7 +82,7 @@ export default function Home() {
           </ScrollReveal>
 
           <StaggerChildren staggerDelay={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {features.map((feature, index) => {
                 const Icon = feature.icon
                 return (
