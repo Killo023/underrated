@@ -10,6 +10,8 @@ interface MagneticButtonProps {
   variant?: 'primary' | 'secondary' | 'accent'
   size?: 'sm' | 'md' | 'lg'
   magneticStrength?: number
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
 const MagneticButton = ({
@@ -18,7 +20,9 @@ const MagneticButton = ({
   className = '',
   variant = 'primary',
   size = 'md',
-  magneticStrength = 0.3
+  magneticStrength = 0.3,
+  type = 'button',
+  disabled = false
 }: MagneticButtonProps) => {
   const [isHovered, setIsHovered] = useState(false)
   const [isPressed, setIsPressed] = useState(false)
@@ -74,24 +78,27 @@ const MagneticButton = ({
   return (
     <motion.button
       ref={buttonRef}
-      onClick={onClick}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
+      type={type}
+      disabled={disabled}
+      onClick={disabled ? undefined : onClick}
+      onMouseMove={disabled ? undefined : handleMouseMove}
+      onMouseEnter={() => !disabled && setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      onMouseDown={() => setIsPressed(true)}
+      onMouseDown={() => !disabled && setIsPressed(true)}
       onMouseUp={() => setIsPressed(false)}
       className={`
         relative overflow-hidden rounded-lg font-semibold
         ${variants[variant]}
         ${sizes[size]}
         ${className}
+        ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
       `}
       style={{
-        x: isHovered ? translateX : 0,
-        y: isHovered ? translateY : 0,
-        rotateX: isHovered ? rotateX : 0,
-        rotateY: isHovered ? rotateY : 0,
-        scale: isPressed ? 0.95 : isHovered ? 1.05 : 1,
+        x: !disabled && isHovered ? translateX : 0,
+        y: !disabled && isHovered ? translateY : 0,
+        rotateX: !disabled && isHovered ? rotateX : 0,
+        rotateY: !disabled && isHovered ? rotateY : 0,
+        scale: isPressed ? 0.95 : !disabled && isHovered ? 1.05 : 1,
         transformStyle: 'preserve-3d'
       }}
       transition={{
@@ -99,14 +106,14 @@ const MagneticButton = ({
         stiffness: 400,
         damping: 25
       }}
-      whileHover={{
+      whileHover={!disabled ? {
         boxShadow: '0 20px 40px rgba(0,0,0,0.3), 0 0 60px rgba(212, 175, 55, 0.3)'
-      }}
-      whileTap={{
+      } : {}}
+      whileTap={!disabled ? {
         scale: 0.95,
         rotateX: -2,
         rotateY: -2
-      }}
+      } : {}}
     >
       {/* Shine effect */}
       <motion.div
