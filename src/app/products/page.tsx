@@ -1,7 +1,17 @@
+'use client'
+
 import { Metadata } from 'next'
 import Image from 'next/image'
+import { useState } from 'react'
 import { Heart, Dumbbell, Sparkles, GraduationCap, Scale, ArrowRight, CheckCircle, ExternalLink } from 'lucide-react'
-import AnimatedWrapper from '@/components/AnimatedWrapper'
+import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/animations/ScrollReveal'
+import StaggerChildren from '@/components/animations/StaggerChildren'
+import ParallaxSection from '@/components/3D/ParallaxSection'
+import Text3D from '@/components/3D/Text3D'
+import EnhancedCard3D from '@/components/3D/EnhancedCard3D'
+import MagneticButton from '@/components/3D/MagneticButton'
+import ElegantBackground from '@/components/backgrounds/ElegantBackground'
 
 export const metadata: Metadata = {
   title: 'Our Projects - Underrated Software Solutions',
@@ -129,48 +139,66 @@ const ProductsPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Background Image with Overlay */}
+      {/* Hero Section with Parallax */}
+      <ParallaxSection speed={0.3} className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <ElegantBackground intensity="medium" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: `url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fit=crop&w=1920&h=1080&q=80&auto=format)`,
           }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/95"></div>
-        </div>
+        />
         
-        <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <AnimatedWrapper animation="slideUp">
-              <div className="text-center lg:text-left">
-                <div className="inline-block mb-4">
-                  <span className="text-sm font-semibold text-black bg-gray-100 px-4 py-2 rounded-full border-2 border-black">
+        <div className="container-max relative z-10 section-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal animation="elegantSlide">
+              <div className="space-y-8">
+                <motion.div
+                  className="inline-block"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                >
+                  <span className="text-sm font-semibold text-gold-300 bg-gold-500/20 px-4 py-2 rounded-full border border-gold-400/30 glass-gold uppercase tracking-wider">
                     Client Projects Portfolio
                   </span>
-                </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Products Developed for Previous Clients
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                </motion.div>
+                <Text3D
+                  text="Products Developed"
+                  size="xl"
+                  gradient="gold"
+                  delay={0.3}
+                  className="block"
+                />
+                <Text3D
+                  text="for Previous Clients"
+                  size="lg"
+                  gradient="silver"
+                  delay={0.6}
+                  className="block"
+                />
+                <p className="text-xl text-white/80 leading-relaxed">
                   Explore our portfolio of professional websites and digital solutions 
                   that we&apos;ve developed for our previous clients across healthcare, fitness, 
                   services, education, and legal industries.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a href="#products" className="btn-primary inline-flex items-center justify-center">
-                    Explore Products
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </div>
+                <MagneticButton
+                  variant="accent"
+                  size="lg"
+                  onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="inline-flex items-center justify-center"
+                >
+                  Explore Products
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </MagneticButton>
               </div>
-            </AnimatedWrapper>
+            </ScrollReveal>
             
-            <AnimatedWrapper animation="slideLeft">
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="relative w-full h-80 bg-gray-100">
+            <ScrollReveal animation="slideLeft">
+              <EnhancedCard3D glowColor="gold">
+                <div className="rounded-2xl overflow-hidden">
+                  <div className="relative w-full h-96 bg-gray-100">
                     <Image
                       src="/images/cherne landing page.PNG"
                       alt="Professional websites portfolio showcase"
@@ -178,124 +206,160 @@ const ProductsPage = () => {
                       className="object-cover"
                       unoptimized
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
                 </div>
-              </div>
-            </AnimatedWrapper>
+              </EnhancedCard3D>
+            </ScrollReveal>
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Products Grid */}
-      <section id="products" className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Client Success Stories
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section id="products" className="section-padding relative overflow-hidden">
+        <ElegantBackground intensity="low" />
+        <div className="container-max relative z-10">
+          <ScrollReveal animation="slideUp" className="text-center mb-16">
+            <Text3D
+              text="Client Success Stories"
+              size="lg"
+              gradient="gold"
+              delay={0}
+              className="block mb-6"
+            />
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               These are real applications and websites we&apos;ve built for our clients. 
               Each project was tailored to meet their specific business needs and goals.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                {/* Product Image */}
-                <div className="relative h-48 bg-gray-100 overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={`${product.title} landing page`}
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center shadow-lg">
-                      <product.icon className="h-6 w-6 text-black" />
-                    </div>
-                  </div>
-                  <div className="absolute top-12 left-4 bg-black/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    Client Project
-                  </div>
-                  {product.url && (
-                    <a
-                      href={product.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="absolute top-4 left-4 text-white hover:text-gray-200 transition-colors bg-black/30 backdrop-blur-sm rounded-lg p-2"
-                      title="Visit Website"
-                    >
-                      <ExternalLink className="h-5 w-5" />
-                    </a>
-                  )}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h2 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
-                      {product.title}
-                    </h2>
-                    <span className="text-xs font-semibold text-white bg-black/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                      {product.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Product Content */}
-                <div className="p-8">
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {product.description}
-                  </p>
-
-                  <div className="mb-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">Key Features</h3>
-                    <ul className="space-y-2">
-                      {product.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">Benefits</h3>
-                    <ul className="space-y-2">
-                      {product.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
-                          <div className="w-1.5 h-1.5 bg-black rounded-full mr-2"></div>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="border-t border-gray-200 pt-6">
-                    <div className="text-center">
-                      <div className="text-lg font-semibold text-gray-700 mb-4">
-                        {product.pricing}
-                      </div>
-                      {product.url && (
-                        <a
-                          href={product.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full btn-primary inline-flex items-center justify-center"
+          </ScrollReveal>
+          <StaggerChildren staggerDelay={0.1}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {products.map((product, index) => {
+                const Icon = product.icon
+                const color = index % 2 === 0 ? 'gold' : 'silver'
+                return (
+                  <EnhancedCard3D
+                    key={index}
+                    glowColor={color as 'gold' | 'silver'}
+                    className="h-full"
+                  >
+                    <div className="glass-elegant rounded-2xl overflow-hidden h-full flex flex-col">
+                      {/* Product Image */}
+                      <div className="relative h-48 bg-gray-100 overflow-hidden">
+                        <Image
+                          src={product.image}
+                          alt={`${product.title} landing page`}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                        <motion.div
+                          className={`absolute top-4 right-4 p-3 rounded-xl glass-${
+                            color === 'gold' ? 'gold' : 'elegant'
+                          } border ${
+                            color === 'gold'
+                              ? 'border-gold-400/30'
+                              : 'border-silver-300/30'
+                          }`}
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                         >
-                          Visit Website
-                          <ExternalLink className="ml-2 h-4 w-4" />
-                        </a>
-                      )}
+                          <Icon className={`h-6 w-6 ${
+                            color === 'gold' ? 'text-gold-400' : 'text-silver-300'
+                          }`} />
+                        </motion.div>
+                        <div className={`absolute top-14 left-4 bg-${
+                          color === 'gold' ? 'gold' : 'silver'
+                        }-500/90 backdrop-blur-sm text-black text-xs font-bold px-3 py-1 rounded-full border ${
+                          color === 'gold'
+                            ? 'border-gold-400/30'
+                            : 'border-silver-300/30'
+                        }`}>
+                          Client Project
+                        </div>
+                        {product.url && (
+                          <a
+                            href={product.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute top-4 left-4 text-white hover:text-gold-400 transition-colors glass-elegant rounded-lg p-2"
+                            title="Visit Website"
+                          >
+                            <ExternalLink className="h-5 w-5" />
+                          </a>
+                        )}
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <h2 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
+                            {product.title}
+                          </h2>
+                          <span className="text-xs font-semibold text-white/90 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
+                            {product.category}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Product Content */}
+                      <div className="p-6 flex-1 flex flex-col">
+                        <p className="text-white/80 mb-6 leading-relaxed flex-1">
+                          {product.description}
+                        </p>
+
+                        <div className="mb-6">
+                          <h3 className="font-bold text-white mb-3">Key Features</h3>
+                          <ul className="space-y-2">
+                            {product.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-center text-sm text-white/70">
+                                <CheckCircle className={`h-4 w-4 ${
+                                  color === 'gold' ? 'text-gold-400' : 'text-silver-300'
+                                } mr-2 flex-shrink-0`} />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="mb-6">
+                          <h3 className="font-bold text-white mb-3">Benefits</h3>
+                          <ul className="space-y-2">
+                            {product.benefits.map((benefit, benefitIndex) => (
+                              <li key={benefitIndex} className="flex items-center text-sm text-white/70">
+                                <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
+                                  color === 'gold' ? 'bg-gold-400' : 'bg-silver-300'
+                                }`}></div>
+                                {benefit}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="border-t border-white/20 pt-6 mt-auto">
+                          <div className="text-center">
+                            <div className={`text-lg font-bold mb-4 ${
+                              color === 'gold' ? 'text-gold-400' : 'text-silver-300'
+                            }`}>
+                              {product.pricing}
+                            </div>
+                            {product.url && (
+                              <MagneticButton
+                                variant={color === 'gold' ? 'accent' : 'secondary'}
+                                size="md"
+                                className="w-full"
+                                onClick={() => window.open(product.url, '_blank')}
+                              >
+                                Visit Website
+                                <ExternalLink className="ml-2 h-4 w-4" />
+                              </MagneticButton>
+                            )}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                  </EnhancedCard3D>
+                )
+              })}
+            </div>
+          </StaggerChildren>
         </div>
       </section>
 
@@ -382,36 +446,47 @@ const ProductsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Background Image with Overlay */}
+      <ParallaxSection speed={0.2} className="relative section-padding overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-gray-900/90 to-black/95" />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: `url(https://images.unsplash.com/photo-1518770660439-4636190af475?fit=crop&w=1920&h=1080&q=80&auto=format)`,
           }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/85 to-gray-900/90"></div>
-        </div>
+        />
         
         <div className="container-max relative z-10">
-          <div className="text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">
-              Ready to Build Your Professional Website?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <ScrollReveal animation="elegantSlide" className="text-center text-white">
+            <Text3D
+              text="Ready to Build Your"
+              size="lg"
+              gradient="gold"
+              delay={0}
+              className="block mb-2"
+            />
+            <Text3D
+              text="Professional Website?"
+              size="lg"
+              gradient="silver"
+              delay={0.3}
+              className="block mb-6"
+            />
+            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Just like we did for our previous clients, we can create a custom website solution 
               tailored to your business needs and industry.
             </p>
-            <a
-              href="/contact"
-              className="bg-white text-black hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center"
+            <MagneticButton
+              variant="accent"
+              size="lg"
+              onClick={() => window.location.href = '/contact'}
+              className="inline-flex items-center"
             >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </div>
+            </MagneticButton>
+          </ScrollReveal>
         </div>
-      </section>
+      </ParallaxSection>
     </div>
   )
 }

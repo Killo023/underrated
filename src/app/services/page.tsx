@@ -1,6 +1,15 @@
+'use client'
+
 import { Metadata } from 'next'
 import { Database, Smartphone, Cloud, BarChart3, ArrowRight } from 'lucide-react'
-import AnimatedWrapper from '@/components/AnimatedWrapper'
+import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/animations/ScrollReveal'
+import StaggerChildren from '@/components/animations/StaggerChildren'
+import ParallaxSection from '@/components/3D/ParallaxSection'
+import Text3D from '@/components/3D/Text3D'
+import EnhancedCard3D from '@/components/3D/EnhancedCard3D'
+import MagneticButton from '@/components/3D/MagneticButton'
+import ElegantBackground from '@/components/backgrounds/ElegantBackground'
 import { SERVICES_PAGE_HERO, SERVICES_PAGE_IMAGES, SERVICES_PAGE_CTA } from '@/lib/image-urls'
 
 export const metadata: Metadata = {
@@ -87,173 +96,223 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Background Image with Overlay */}
+      {/* Hero Section with Parallax */}
+      <ParallaxSection speed={0.3} className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <ElegantBackground intensity="medium" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: `url(${SERVICES_PAGE_HERO})`,
           }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/95"></div>
-        </div>
+        />
         
-        <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <AnimatedWrapper animation="slideUp">
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Our Services
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
+        <div className="container-max relative z-10 section-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal animation="elegantSlide">
+              <div className="space-y-8">
+                <Text3D
+                  text="Our Services"
+                  size="xl"
+                  gradient="gold"
+                  delay={0}
+                  className="block mb-6"
+                />
+                <p className="text-xl text-white/80 leading-relaxed">
                   We provide professional web development and software solutions designed to 
                   transform your digital presence and help your business grow online.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a href="#services" className="btn-primary inline-flex items-center justify-center">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <MagneticButton
+                    variant="accent"
+                    size="lg"
+                    onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="inline-flex items-center justify-center"
+                  >
                     Explore Services
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
+                  </MagneticButton>
                 </div>
               </div>
-            </AnimatedWrapper>
+            </ScrollReveal>
             
-            <AnimatedWrapper animation="slideLeft">
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <ScrollReveal animation="slideLeft">
+              <EnhancedCard3D glowColor="gold" className="relative">
+                <div className="rounded-2xl overflow-hidden">
                   <img
                     src={SERVICES_PAGE_HERO}
                     alt="Modern app dashboard with analytics and data visualization"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-96 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-              </div>
-            </AnimatedWrapper>
+              </EnhancedCard3D>
+            </ScrollReveal>
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Services Grid */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6">
-                    <service.icon className="h-8 w-8 text-white" />
-                  </div>
-                  
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    {service.title}
-                  </h2>
-                  
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Key Features</h3>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-black rounded-full mr-3"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Benefits</h3>
-                      <ul className="space-y-2">
-                        {service.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-center text-gray-600">
-                            <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-3"></div>
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg h-80">
-                    <img
-                      src={SERVICES_PAGE_IMAGES[index]}
-                      alt={`${service.title} - ${service.description}`}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                    <div className="absolute top-4 left-4">
-                      <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                        <service.icon className="h-6 w-6 text-black" />
+      <section id="services" className="section-padding relative overflow-hidden">
+        <ElegantBackground intensity="low" />
+        <div className="container-max relative z-10">
+          <div className="space-y-24">
+            {services.map((service, index) => {
+              const Icon = service.icon
+              const color = index % 2 === 0 ? 'gold' : 'silver'
+              return (
+                <ScrollReveal
+                  key={index}
+                  animation={index % 2 === 0 ? 'slideRight' : 'slideLeft'}
+                  delay={index * 0.2}
+                >
+                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+                    index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                  }`}>
+                    <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                      <motion.div
+                        className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-8 bg-gradient-to-br ${
+                          color === 'gold'
+                            ? 'from-gold-500/20 to-gold-600/10 border border-gold-400/30'
+                            : 'from-silver-400/20 to-silver-500/10 border border-silver-300/30'
+                        } glass-elegant`}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                      >
+                        <Icon className={`h-10 w-10 ${
+                          color === 'gold' ? 'text-gold-400' : 'text-silver-300'
+                        }`} />
+                      </motion.div>
+                      
+                      <Text3D
+                        text={service.title}
+                        size="md"
+                        gradient={color}
+                        delay={0}
+                        className="block mb-6"
+                      />
+                      
+                      <p className="text-lg text-white/80 mb-8 leading-relaxed">
+                        {service.description}
+                      </p>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <EnhancedCard3D glowColor={color as 'gold' | 'silver'} className="p-6">
+                          <h3 className="font-bold text-white mb-4 text-lg">Key Features</h3>
+                          <ul className="space-y-3">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-start text-white/70">
+                                <div className={`w-2 h-2 rounded-full mr-3 mt-2 ${
+                                  color === 'gold' ? 'bg-gold-400' : 'bg-silver-300'
+                                }`}></div>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </EnhancedCard3D>
+                        
+                        <EnhancedCard3D glowColor={color as 'gold' | 'silver'} className="p-6">
+                          <h3 className="font-bold text-white mb-4 text-lg">Benefits</h3>
+                          <ul className="space-y-3">
+                            {service.benefits.map((benefit, benefitIndex) => (
+                              <li key={benefitIndex} className="flex items-start text-white/70">
+                                <div className={`w-2 h-2 rounded-full mr-3 mt-2 ${
+                                  color === 'gold' ? 'bg-gold-400' : 'bg-silver-300'
+                                }`}></div>
+                                <span>{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </EnhancedCard3D>
                       </div>
                     </div>
+                    
+                    <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+                      <EnhancedCard3D glowColor={color as 'gold' | 'silver'}>
+                        <div className="relative rounded-2xl overflow-hidden h-96">
+                          <img
+                            src={SERVICES_PAGE_IMAGES[index]}
+                            alt={`${service.title} - ${service.description}`}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                          <motion.div
+                            className={`absolute top-6 left-6 p-4 rounded-xl glass-${
+                              color === 'gold' ? 'gold' : 'elegant'
+                            } border ${
+                              color === 'gold'
+                                ? 'border-gold-400/30'
+                                : 'border-silver-300/30'
+                            }`}
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                          >
+                            <Icon className={`h-8 w-8 ${
+                              color === 'gold' ? 'text-gold-400' : 'text-silver-300'
+                            }`} />
+                          </motion.div>
+                        </div>
+                      </EnhancedCard3D>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </ScrollReveal>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Background Image with Overlay */}
+      <ParallaxSection speed={0.2} className="relative section-padding overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-gray-900/90 to-black/95" />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: `url(${SERVICES_PAGE_CTA})`,
           }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-50/95 via-gray-100/90 to-gray-50/95"></div>
-        </div>
+        />
         
         <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <AnimatedWrapper animation="slideUp">
-              <div className="text-center lg:text-left">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Ready to Get Started?
-                </h2>
-                <p className="text-xl text-gray-600 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal animation="elegantSlide">
+              <div className="space-y-6">
+                <Text3D
+                  text="Ready to Get Started?"
+                  size="lg"
+                  gradient="gold"
+                  delay={0}
+                  className="block mb-4"
+                />
+                <p className="text-xl text-white/80 leading-relaxed">
                   Let&apos;s discuss how our services can help transform your business processes.
                 </p>
-                <a
-                  href="/contact"
-                  className="btn-primary inline-flex items-center"
+                <MagneticButton
+                  variant="accent"
+                  size="lg"
+                  onClick={() => window.location.href = '/contact'}
+                  className="inline-flex items-center"
                 >
                   Get Your Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </MagneticButton>
               </div>
-            </AnimatedWrapper>
+            </ScrollReveal>
             
-            <AnimatedWrapper animation="slideLeft">
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <ScrollReveal animation="slideLeft">
+              <EnhancedCard3D glowColor="gold">
+                <div className="rounded-2xl overflow-hidden">
                   <img
                     src={SERVICES_PAGE_CTA}
                     alt="Business consultation and web development planning"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-96 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-              </div>
-            </AnimatedWrapper>
+              </EnhancedCard3D>
+            </ScrollReveal>
           </div>
         </div>
-      </section>
+      </ParallaxSection>
     </div>
   )
 }

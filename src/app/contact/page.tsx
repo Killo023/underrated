@@ -2,6 +2,13 @@
 
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/animations/ScrollReveal'
+import ParallaxSection from '@/components/3D/ParallaxSection'
+import Text3D from '@/components/3D/Text3D'
+import EnhancedCard3D from '@/components/3D/EnhancedCard3D'
+import MagneticButton from '@/components/3D/MagneticButton'
+import ElegantBackground from '@/components/backgrounds/ElegantBackground'
 import { ALL_IMAGES } from '@/lib/image-urls'
 
 const ContactPage = () => {
@@ -80,34 +87,43 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-white section-padding">
-        <div className="container-max">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Get In Touch
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
+      {/* Hero Section with Parallax */}
+      <ParallaxSection speed={0.3} className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <ElegantBackground intensity="medium" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
+        
+        <div className="container-max relative z-10 section-padding">
+          <ScrollReveal animation="elegantSlide" className="max-w-4xl mx-auto text-center">
+            <Text3D
+              text="Get In Touch"
+              size="xl"
+              gradient="gold"
+              delay={0}
+              className="block mb-6"
+            />
+            <p className="text-xl text-white/80 leading-relaxed">
               Ready to build your next website or software project? Let&apos;s discuss your needs 
               and create a custom solution that drives results.
             </p>
-          </div>
+          </ScrollReveal>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Contact Form & Info */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
+      <section className="section-padding relative overflow-hidden">
+        <ElegantBackground intensity="low" />
+        <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Send us a message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <ScrollReveal animation="slideRight">
+              <EnhancedCard3D glowColor="gold" className="p-8">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Send us a message
+                </h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-white mb-2">
                       Full Name *
                     </label>
                     <input
@@ -117,12 +133,12 @@ const ContactPage = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-3 glass-elegant border border-white/20 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-gold-400/50 text-white placeholder-white/50 bg-white/5"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-white mb-2">
                       Email Address *
                     </label>
                     <input
@@ -132,7 +148,7 @@ const ContactPage = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-3 glass-elegant border border-white/20 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-gold-400/50 text-white placeholder-white/50 bg-white/5"
                       placeholder="john@company.com"
                     />
                   </div>
@@ -140,7 +156,7 @@ const ContactPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="company" className="block text-sm font-semibold text-white mb-2">
                       Company
                     </label>
                     <input
@@ -149,12 +165,12 @@ const ContactPage = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-3 glass-elegant border border-white/20 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-gold-400/50 text-white placeholder-white/50 bg-white/5"
                       placeholder="Your Company"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-semibold text-white mb-2">
                       Phone Number
                     </label>
                     <input
@@ -163,14 +179,14 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-3 glass-elegant border border-white/20 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-gold-400/50 text-white placeholder-white/50 bg-white/5"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="service" className="block text-sm font-semibold text-white mb-2">
                     Service Interest
                   </label>
                   <select
@@ -178,7 +194,7 @@ const ContactPage = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 glass-elegant border border-white/20 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-gold-400/50 text-white bg-white/5"
                   >
                     <option value="">Select a service</option>
                     <option value="web-development">Web Development</option>
@@ -193,7 +209,7 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-white mb-2">
                     Message *
                   </label>
                   <textarea
@@ -203,15 +219,17 @@ const ContactPage = () => {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 glass-elegant border border-white/20 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-gold-400/50 text-white placeholder-white/50 bg-white/5"
                     placeholder="Tell us about your business needs and how we can help..."
                   />
                 </div>
 
-                <button
+                <MagneticButton
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-accent flex items-center justify-center"
+                  variant="accent"
+                  size="lg"
+                  className="w-full"
                 >
                   {isSubmitting ? (
                     <>
@@ -224,113 +242,136 @@ const ContactPage = () => {
                       <Send className="ml-2 h-5 w-5" />
                     </>
                   )}
-                </button>
+                </MagneticButton>
               </form>
-            </div>
+            </EnhancedCard3D>
+          </ScrollReveal>
 
             {/* Contact Information */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary-600" />
+            <ScrollReveal animation="slideLeft">
+              <EnhancedCard3D glowColor="silver" className="p-8 h-full">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Contact Information
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <motion.div
+                      className="w-12 h-12 glass-gold rounded-lg flex items-center justify-center flex-shrink-0 border border-gold-400/30"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    >
+                      <Mail className="h-6 w-6 text-gold-400" />
+                    </motion.div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">Email</h3>
+                      <p className="text-white/80">info@underratedsecurity.com</p>
+                      <p className="text-sm text-white/60">We&apos;ll respond within 24 hours</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@underratedsecurity.com</p>
-                    <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
+
+                  <div className="flex items-start space-x-4">
+                    <motion.div
+                      className="w-12 h-12 glass-gold rounded-lg flex items-center justify-center flex-shrink-0 border border-gold-400/30"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    >
+                      <Phone className="h-6 w-6 text-gold-400" />
+                    </motion.div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">Phone</h3>
+                      <p className="text-white/80">079 477 2031</p>
+                      <p className="text-sm text-white/60">Mon-Fri 9AM-6PM SAST</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <motion.div
+                      className="w-12 h-12 glass-gold rounded-lg flex items-center justify-center flex-shrink-0 border border-gold-400/30"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    >
+                      <MapPin className="h-6 w-6 text-gold-400" />
+                    </motion.div>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">Office</h3>
+                      <p className="text-white/80">5 Hexriver Street<br />Winchester Hills</p>
+                      <p className="text-sm text-white/60">Schedule a visit</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">079 477 2031</p>
-                    <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM SAST</p>
-                  </div>
+                {/* Why Choose Us */}
+                <div className="mt-12 glass-elegant rounded-xl p-6 border border-white/20">
+                  <h3 className="text-lg font-semibold text-white mb-4">
+                    Why Choose Us?
+                  </h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-center text-sm text-white/80">
+                      <CheckCircle className="h-4 w-4 text-gold-400 mr-3 flex-shrink-0" />
+                      Free consultation and analysis
+                    </li>
+                    <li className="flex items-center text-sm text-white/80">
+                      <CheckCircle className="h-4 w-4 text-gold-400 mr-3 flex-shrink-0" />
+                      Custom solutions tailored to your needs
+                    </li>
+                    <li className="flex items-center text-sm text-white/80">
+                      <CheckCircle className="h-4 w-4 text-gold-400 mr-3 flex-shrink-0" />
+                      Proven track record with 500+ projects
+                    </li>
+                    <li className="flex items-center text-sm text-white/80">
+                      <CheckCircle className="h-4 w-4 text-gold-400 mr-3 flex-shrink-0" />
+                      24/7 support and maintenance
+                    </li>
+                  </ul>
                 </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Office</h3>
-                    <p className="text-gray-600">5 Hexriver Street<br />Winchester Hills</p>
-                    <p className="text-sm text-gray-500">Schedule a visit</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Why Choose Us */}
-              <div className="mt-12 bg-gray-50 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                  Why Choose Us?
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center text-sm text-gray-600">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                    Free consultation and analysis
-                  </li>
-                  <li className="flex items-center text-sm text-gray-600">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                    Custom solutions tailored to your needs
-                  </li>
-                  <li className="flex items-center text-sm text-gray-600">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                    Proven track record with 500+ projects
-                  </li>
-                  <li className="flex items-center text-sm text-gray-600">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                    24/7 support and maintenance
-                  </li>
-                </ul>
-              </div>
-            </div>
+              </EnhancedCard3D>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-              Frequently Asked Questions
-            </h2>
+      <section className="section-padding relative overflow-hidden">
+        <ElegantBackground intensity="low" />
+        <div className="container-max relative z-10">
+          <ScrollReveal animation="slideUp" className="max-w-3xl mx-auto">
+            <Text3D
+              text="Frequently Asked Questions"
+              size="md"
+              gradient="gold"
+              delay={0}
+              className="block text-center mb-12"
+            />
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  How long does a typical web development project take?
-                </h3>
-                <p className="text-gray-600">
-                  Project timelines vary based on complexity, but most web development projects are completed within 4-12 weeks. We provide detailed timelines during the consultation phase.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Do you provide training for our team?
-                </h3>
-                <p className="text-gray-600">
-                  Yes, we include comprehensive training and documentation for all solutions. We also provide ongoing support to ensure successful adoption.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  What if we need changes after implementation?
-                </h3>
-                <p className="text-gray-600">
-                  We offer flexible maintenance and update packages. Most solutions are designed to be easily modified as your business needs evolve.
-                </p>
-              </div>
+              {[
+                {
+                  question: 'How long does a typical web development project take?',
+                  answer: 'Project timelines vary based on complexity, but most web development projects are completed within 4-12 weeks. We provide detailed timelines during the consultation phase.'
+                },
+                {
+                  question: 'Do you provide training for our team?',
+                  answer: 'Yes, we include comprehensive training and documentation for all solutions. We also provide ongoing support to ensure successful adoption.'
+                },
+                {
+                  question: 'What if we need changes after implementation?',
+                  answer: 'We offer flexible maintenance and update packages. Most solutions are designed to be easily modified as your business needs evolve.'
+                }
+              ].map((faq, index) => (
+                <EnhancedCard3D
+                  key={index}
+                  glowColor={index % 2 === 0 ? 'gold' : 'silver'}
+                  className="p-6"
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-white/70">
+                    {faq.answer}
+                  </p>
+                </EnhancedCard3D>
+              ))}
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

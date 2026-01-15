@@ -3,7 +3,14 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Calendar, User, ArrowRight } from 'lucide-react'
-import AnimatedWrapper from '@/components/AnimatedWrapper'
+import { motion } from 'framer-motion'
+import ScrollReveal from '@/components/animations/ScrollReveal'
+import StaggerChildren from '@/components/animations/StaggerChildren'
+import ParallaxSection from '@/components/3D/ParallaxSection'
+import Text3D from '@/components/3D/Text3D'
+import EnhancedCard3D from '@/components/3D/EnhancedCard3D'
+import MagneticButton from '@/components/3D/MagneticButton'
+import ElegantBackground from '@/components/backgrounds/ElegantBackground'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import { BLOG_PAGE_HERO, BLOG_POST_IMAGES } from '@/lib/image-urls'
 
@@ -92,70 +99,79 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative section-padding overflow-hidden">
-        {/* Background Image with Overlay */}
+      {/* Hero Section with Parallax */}
+      <ParallaxSection speed={0.3} className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <ElegantBackground intensity="medium" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: `url(${BLOG_PAGE_HERO})`,
           }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/95"></div>
-        </div>
+        />
         
-        <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <AnimatedWrapper animation="slideUp">
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  Our Blog
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
+        <div className="container-max relative z-10 section-padding">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal animation="elegantSlide">
+              <div className="space-y-8">
+                <Text3D
+                  text="Our Blog"
+                  size="xl"
+                  gradient="gold"
+                  delay={0}
+                  className="block mb-6"
+                />
+                <p className="text-xl text-white/80 leading-relaxed">
                   Insights, tips, and best practices for web development, software development, and digital solutions. 
                   Stay updated with the latest trends and strategies.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a href="#blog" className="btn-primary inline-flex items-center justify-center">
-                    Read Latest Posts
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </div>
+                <MagneticButton
+                  variant="accent"
+                  size="lg"
+                  onClick={() => document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="inline-flex items-center justify-center"
+                >
+                  Read Latest Posts
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </MagneticButton>
               </div>
-            </AnimatedWrapper>
+            </ScrollReveal>
             
-            <AnimatedWrapper animation="slideLeft">
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <ScrollReveal animation="slideLeft">
+              <EnhancedCard3D glowColor="gold">
+                <div className="rounded-2xl overflow-hidden">
                   <img
                     src={BLOG_PAGE_HERO}
                     alt="Business blog and content marketing for web development insights"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-96 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-              </div>
-            </AnimatedWrapper>
+              </EnhancedCard3D>
+            </ScrollReveal>
           </div>
         </div>
-      </section>
+      </ParallaxSection>
 
       {/* Categories Filter */}
-      <section className="bg-white border-b border-gray-200">
-        <div className="container-max py-6">
+      <section className="relative py-8 border-b border-white/10">
+        <ElegantBackground intensity="low" />
+        <div className="container-max relative z-10">
           <div className="flex flex-wrap gap-4 justify-center">
             {categories.map((category) => (
-              <button
+              <motion.button
                 key={category}
                 onClick={() => handleCategoryChange(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                   category === selectedCategory
-                    ? 'bg-black text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-gradient-gold text-black shadow-glow-gold'
+                    : 'glass-elegant text-white/80 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {category}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -202,70 +218,85 @@ const BlogPage = () => {
       )}
 
       {/* Blog Posts Grid */}
-      <section id="blog" className="section-padding bg-gray-50">
-        <div className="container-max">
+      <section id="blog" className="section-padding relative overflow-hidden">
+        <ElegantBackground intensity="low" />
+        <div className="container-max relative z-10">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No posts found in this category.</p>
+              <p className="text-white/80 text-lg">No posts found in this category.</p>
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {displayedPosts.map((post, index) => (
-              <article
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                {/* Post Image */}
-                <div className="h-48 relative overflow-hidden">
-                  <img
-                    src={BLOG_POST_IMAGES[index % BLOG_POST_IMAGES.length]}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              <StaggerChildren staggerDelay={0.1}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {displayedPosts.map((post, index) => {
+                    const color = index % 2 === 0 ? 'gold' : 'silver'
+                    return (
+                      <EnhancedCard3D
+                        key={index}
+                        glowColor={color as 'gold' | 'silver'}
+                        className="h-full"
+                      >
+                        <article className="glass-elegant rounded-2xl overflow-hidden h-full flex flex-col">
+                          {/* Post Image */}
+                          <div className="h-48 relative overflow-hidden">
+                            <img
+                              src={BLOG_POST_IMAGES[index % BLOG_POST_IMAGES.length]}
+                              alt={post.title}
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                          </div>
+
+                          {/* Post Content */}
+                          <div className="p-6 flex-1 flex flex-col">
+                            <div className="flex items-center space-x-4 mb-3">
+                              <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${
+                                color === 'gold'
+                                  ? 'bg-gold-500/20 text-gold-300 border-gold-400/30'
+                                  : 'bg-silver-400/20 text-silver-300 border-silver-300/30'
+                              }`}>
+                                {post.category}
+                              </span>
+                              <span className="text-white/60 text-sm">{post.readTime}</span>
+                            </div>
+
+                            <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
+                              {post.title}
+                            </h3>
+
+                            <p className="text-white/70 mb-4 line-clamp-3 flex-1">
+                              {post.excerpt}
+                            </p>
+
+                            <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/10">
+                              <div className="flex items-center space-x-3 text-sm text-white/60">
+                                <div className="flex items-center space-x-1">
+                                  <User className="h-4 w-4" />
+                                  <span>{post.author}</span>
+                                </div>
+                                <div className="flex items-center space-x-1">
+                                  <Calendar className="h-4 w-4" />
+                                  <span>{new Date(post.date).toLocaleDateString()}</span>
+                                </div>
+                              </div>
+                              <Link
+                                href={`/blog/${generateSlug(post.title)}`}
+                                className={`font-semibold text-sm flex items-center ${
+                                  color === 'gold' ? 'text-gold-400 hover:text-gold-300' : 'text-silver-300 hover:text-silver-200'
+                                } transition-colors`}
+                              >
+                                Read More
+                                <ArrowRight className="ml-1 h-4 w-4" />
+                              </Link>
+                            </div>
+                          </div>
+                        </article>
+                      </EnhancedCard3D>
+                    )
+                  })}
                 </div>
-
-                {/* Post Content */}
-                <div className="p-6">
-                  <div className="flex items-center space-x-4 mb-3">
-                    <span className="bg-gray-100 text-black px-3 py-1 rounded-full text-xs font-semibold border border-black">
-                      {post.category}
-                    </span>
-                    <span className="text-gray-500 text-sm">{post.readTime}</span>
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
-                    {post.title}
-                  </h3>
-
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3 text-sm text-gray-500">
-                      <div className="flex items-center space-x-1">
-                        <User className="h-4 w-4" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="h-4 w-4" />
-                        <span>{new Date(post.date).toLocaleDateString()}</span>
-                      </div>
-                    </div>
-                    <Link
-                      href={`/blog/${generateSlug(post.title)}`}
-                      className="text-black hover:text-gray-700 font-semibold text-sm flex items-center"
-                    >
-                      Read More
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-                ))}
-              </div>
+              </StaggerChildren>
 
               {/* Load More Button */}
               {hasMorePosts && (
